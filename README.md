@@ -107,3 +107,123 @@ La aplicación está configurada para desplegarse en GitHub Pages. Para desplega
 1. Asegúrate de que tus cambios están commiteados
 2. Ejecuta `npm run deploy`
 3. La aplicación se desplegará en `https://[username].github.io/tercer-espacio`
+
+## Sistema de Diseño
+
+### Colores
+- **Primarios**
+  - Principal: `#EC7198`
+  - Claro: `#F4B3CB`
+  - Oscuro: `#CC3366`
+- **Fondos**
+  - Base: `#2552F2`
+  - Claro: `#7A9AF4`
+  - Oscuro: `#003399`
+  - Más Oscuro: `#002266`
+  - Acento: `#B29BF9`
+
+### Tipografía
+- **Fuentes**
+  - Marca: Brice (sans-serif)
+  - Principal: Gotham (sans-serif)
+- **Tamaños**
+  - Base: 16px (1rem)
+  - Rangos: desde 12px (0.75rem) hasta 36px (2.25rem)
+
+### Espaciado
+- Unidad base: 8px
+- Pequeño: 8px
+- Medio: 16px
+- Grande: 24px
+
+### Breakpoints
+- Móvil: 480px
+- Tablet: 768px
+- Desktop: 1024px
+
+## Requisitos del Sistema
+
+- Node.js >= 18.0.0
+- npm >= 9.0.0
+
+## Instalación
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/FranHeredia/tercer-espacio.git
+```
+
+2. Instala las dependencias:
+```bash
+cd tercer-espacio
+npm install
+```
+
+3. Configura las variables de entorno:
+   - Copia `.env.example` a `.env`
+   - Ajusta las variables según tu entorno
+
+## Manejo de Imágenes
+
+### Ubicación de Imágenes
+- Las imágenes estáticas deben colocarse en `public/images/`
+- Para rutas de imágenes en componentes, usar:
+```typescript
+src={`${import.meta.env.BASE_URL}images/nombre-imagen.png`}
+```
+
+### Formatos Recomendados
+- Usar WebP para mejor rendimiento
+- PNG para imágenes con transparencia
+- JPG para fotografías
+- SVG para iconos y logos
+
+## Componentes Principales
+
+### Profile
+- Muestra información principal y redes sociales
+- Soporta imagen de perfil circular
+- Enlaces a redes sociales con iconos SVG
+- Totalmente responsivo
+
+### LinkSection
+- Sección de enlaces tipo Linktree
+- Soporta enlaces primarios y secundarios
+- Animaciones en hover
+- Adaptable a diferentes tamaños de pantalla
+
+## Scripts Adicionales
+
+- `npm run lint`: Ejecuta el linter para verificar el código
+- `npm run preview`: Vista previa de la versión de producción local
+- `npm run predeploy`: Prepara la aplicación para despliegue
+- `npm run deploy`: Despliega en GitHub Pages
+
+## Versiones de Dependencias
+
+### Producción
+- React: ^19.1.0
+- React DOM: ^19.1.0
+
+### Desarrollo
+- TypeScript: ~5.8.3
+- Vite: ^6.3.5
+- Sass: ^1.89.0
+- ESLint: ^9.25.0
+
+## Solución de Problemas Comunes
+
+### Imágenes no cargan en desarrollo
+- Verificar que las imágenes estén en `public/images/`
+- Usar rutas relativas sin `/public`
+- Utilizar `import.meta.env.BASE_URL` para rutas absolutas
+
+### Estilos no se aplican
+- Verificar importación de variables SCSS
+- Comprobar la sintaxis de módulos CSS
+- Asegurar que los nombres de clase son únicos
+
+### Problemas de Despliegue
+1. Verificar la configuración de `homepage` en package.json
+2. Asegurar que el repositorio tiene permisos de GitHub Pages
+3. Comprobar que la rama gh-pages existe y está actualizada
