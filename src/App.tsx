@@ -7,9 +7,15 @@ function App() {
 
   return (
     <div className="container">
+      <Profile />
       {linkSections.map((section, index) => (
         <LinksSection key={index} section={section} />
       ))}
+      <p className='footer'>
+        Dirección: Humberto Primo 836 - Córdoba, Argentina
+        <br />
+        Alias: TERCER.ESPACIO
+      </p>
     </div>
   )
 }

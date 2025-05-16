@@ -2,55 +2,55 @@
 
 .profile {
   text-align: center;
-  margin-bottom: $spacing-large;
-
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: $spacing-medium;
-    border: 3px solid $primary;
-  }
-
-  h1 {
-    font-family: $font-brand;
-    font-size: $font-size-2xl;
-    color: $text-inverse;
-    margin-bottom: $spacing-small;
-  }
-
-  p {
-    color: $text-secondary;
-    font-size: $font-size-lg;
-    margin-bottom: $spacing-medium;
-  }
+  padding: $spacing-large 0;
+  margin: 0 auto;
 
   .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: $spacing-medium;
+    border: 3px solid $border-accent;
     object-fit: cover;
+    transition: $transition-default;
   }
 
   .brand-name {
     font-family: $font-brand;
-    font-weight: bold;
-    margin: 1rem 0 0.5rem;
+    font-size: $font-size-3xl;
     color: $text-inverse;
+    margin-bottom: $spacing-small;
+    font-weight: $font-weight-bold;
+  }
+
+  .subtitle {
+    color: $text-secondary;
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-medium;
+    font-family: $font-main;
   }
 
   .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: $spacing-medium;
+    margin-top: $spacing-medium;
 
     .social-media-icon {
       svg {
         height: 45px;
+        width: 45px;
         fill: $primary;
         transition: $transition-default;
 
         &:hover {
           fill: $primary-light;
           transform: translateY(-2px);
+          filter: drop-shadow(0 4px 4px $shadow-soft);
+        }
+
+        &:active {
+          transform: translateY(0);
         }
       }
     }
@@ -59,17 +59,28 @@
 
 @media (max-width: $breakpoint-mobile) {
   .profile {
-    img {
-      width: 120px;
-      height: 120px;
+    padding: $spacing-medium $spacing-small;
+
+    .profile-picture {
+      width: 140px;
+      height: 140px;
     }
 
-    h1 {
-      font-size: $font-size-xl;
+    .brand-name {
+      font-size: $font-size-2xl;
     }
 
-    p {
+    .subtitle {
       font-size: $font-size-base;
+    }
+
+    .social-icons {
+      gap: $spacing-small;
+      
+      .social-media-icon svg {
+        height: 35px;
+        width: 35px;
+      }
     }
   }
 } 
