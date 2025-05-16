@@ -1,0 +1,35 @@
+// Brice Font
+@font-face {
+  font-family: 'Brice';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Brice-Bold.otf') format('opentype');
+}
+
+// Gotham Font
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Gotham-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Gotham-Bold.otf') format('opentype');
+}
+
+@forward './variables'; 

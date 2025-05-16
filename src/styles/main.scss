@@ -1,4 +1,4 @@
-@import './variables';
+@use 'variables' as *;
 
 // Reset básico
 * {
@@ -9,28 +9,25 @@
 
 body {
   font-family: $font-main;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $text-primary;
-  background-color: $bg-light;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: $bg-dark;
+  color: $text-inverse;
+  margin: 0;
+  font-weight: 300;
 }
 
 // Contenedor principal
 .container {
-  max-width: $breakpoint-desktop;
+  max-width: $breakpoint-desktop;;
   margin: 0 auto;
   padding: $spacing-medium;
 }
 
-// Utilidades básicas
-.text-primary {
-  color: $primary;
-}
-
-.text-secondary {
-  color: $text-secondary;
+@media (max-width: $breakpoint-mobile) {
+  .container {
+    max-width: 95%;
+    padding: 0;
+  }
 }
 
 // Margins
@@ -52,48 +49,3 @@ a {
     color: $primary;
   }
 }
-
-// Botones base
-.btn {
-  padding: 0.5rem 1rem;
-  border-radius: $border-radius-small;
-  border: none;
-  cursor: pointer;
-  transition: $transition-default;
-  font-family: $font-brand;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px $shadow-soft;
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  &:disabled {
-    background-color: $state-disabled;
-    cursor: not-allowed;
-    transform: none;
-  }
-}
-
-// Botón primario
-.btn-primary {
-  background-color: $primary;
-  color: $text-inverse;
-
-  &:hover {
-    background-color: $primary-dark;
-  }
-}
-
-// Botón secundario
-.btn-secondary {
-  background-color: $bg-dark;
-  color: $text-inverse;
-
-  &:hover {
-    background-color: $bg-darker;
-  }
-} 
