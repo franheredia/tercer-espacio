@@ -1,54 +1,109 @@
-# React + TypeScript + Vite
+# Tercer Espacio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto está construido con React + TypeScript + Vite y está configurado para ser desplegado en GitHub Pages.
 
-Currently, two official plugins are available:
+## Estructura del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── public/              # Archivos públicos estáticos
+├── src/                # Código fuente
+│   ├── assets/         # Archivos estáticos
+│   │   ├── images/    # Imágenes
+│   │   └── icons/     # Iconos
+│   ├── components/     # Componentes reutilizables
+│   │   ├── common/    # Componentes genéricos (botones, inputs, etc.)
+│   │   └── layout/    # Componentes de estructura (header, footer, etc.)
+│   ├── pages/         # Páginas/rutas de la aplicación
+│   ├── hooks/         # Custom hooks
+│   ├── services/      # Servicios y llamadas a APIs
+│   ├── utils/         # Funciones utilitarias
+│   ├── types/         # Definiciones de tipos TypeScript
+│   ├── layouts/       # Layouts de página
+│   ├── context/       # Contextos de React
+│   ├── constants/     # Constantes y configuraciones
+│   ├── styles/        # Estilos SCSS
+│   ├── App.tsx        # Componente principal
+│   ├── main.tsx       # Punto de entrada
+│   └── vite-env.d.ts  # Declaraciones de tipos para Vite
+├── index.html         # Archivo HTML principal
+├── package.json       # Dependencias y scripts
+├── tsconfig.json      # Configuración de TypeScript
+├── vite.config.ts     # Configuración de Vite
+└── README.md          # Este archivo
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Explicación de Directorios
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Directorios Raíz
+- `public/`: Archivos estáticos que se sirven directamente sin procesamiento
+- `src/`: Contiene todo el código fuente de la aplicación
+- `index.html`: Punto de entrada HTML de la aplicación
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+#### Dentro de `src/`
+
+##### Componentes y Páginas
+- `components/`: Componentes reutilizables de React
+  - `common/`: Componentes genéricos como botones, inputs, cards
+  - `layout/`: Componentes estructurales como headers, footers, sidebars
+- `pages/`: Cada archivo representa una ruta/página de la aplicación
+- `layouts/`: Plantillas de página reutilizables
+
+##### Lógica y Datos
+- `hooks/`: Custom hooks de React para lógica reutilizable
+- `services/`: Funciones para interactuar con APIs externas
+- `context/`: Contextos de React para estado global
+- `utils/`: Funciones utilitarias y helpers
+- `constants/`: Valores constantes y configuraciones
+
+##### Tipos y Assets
+- `types/`: Interfaces y tipos de TypeScript
+- `assets/`: Archivos estáticos como imágenes e iconos
+  - `images/`: Imágenes del proyecto
+  - `icons/`: Iconos y SVGs
+
+##### Estilos
+- `styles/`: Archivos SCSS globales y variables
+  - `variables.scss`: Variables SCSS globales
+  - `main.scss`: Estilos globales
+
+##### Archivos Principales
+- `App.tsx`: Componente raíz de React
+- `main.tsx`: Punto de entrada de JavaScript/TypeScript
+- `vite-env.d.ts`: Declaraciones de tipos para el entorno de Vite
+
+#### Archivos de Configuración
+- `package.json`: Gestión de dependencias y scripts
+- `tsconfig.json`: Configuración de TypeScript
+- `vite.config.ts`: Configuración de Vite
+
+## Scripts Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Compila el proyecto para producción
+- `npm run preview`: Vista previa de la versión de producción
+- `npm run deploy`: Despliega la aplicación en GitHub Pages
+
+## Convenciones de Código
+
+### Componentes
+- Usar TypeScript y extensión `.tsx`
+- Un componente por archivo
+- Nombres en PascalCase
+- Estilos en módulos SCSS (`.module.scss`)
+
+### Estilos
+- Variables globales en `styles/variables.scss`
+- Estilos específicos de componentes en módulos SCSS junto al componente
+- Usar las variables SCSS definidas para consistencia
+
+### Imports
+- Imports absolutos desde `src/`
+- Agrupar imports por tipo (React, componentes, estilos, etc.)
+
+## Despliegue
+
+La aplicación está configurada para desplegarse en GitHub Pages. Para desplegar:
+
+1. Asegúrate de que tus cambios están commiteados
+2. Ejecuta `npm run deploy`
+3. La aplicación se desplegará en `https://[username].github.io/tercer-espacio`
