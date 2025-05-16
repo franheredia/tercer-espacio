@@ -7,7 +7,6 @@
   padding: 0;
 
   .space-selector-container {
-    font-weight: 500;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -21,6 +20,7 @@
       justify-content: center;
 
       button {
+        font-weight: $font-weight-bold;
         padding: $spacing-small $spacing-medium;
         border: 2px solid $bg-darker;
         background-color: $primary;
@@ -43,6 +43,7 @@
     }
 
     .wpp-btn {
+      font-weight: $font-weight-bold;
       background-color: $accent-positive;
       color: $text-primary;
       padding: $spacing-small $spacing-medium;
@@ -54,8 +55,8 @@
       border: none;
 
       &:hover {
-        background-color: darken($color-whatsapp, 10%);
-        color: $text-inverse;
+        background-color: $color-whatsapp;
+        color: $bg-dark;
       }
     }
   }

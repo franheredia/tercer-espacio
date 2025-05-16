@@ -13,10 +13,9 @@ const LinksSection: React.FC<LinksSectionProps> = ({ section }) => {
       <h2>{section.title}</h2>
       <div className="links">
         {section.links.map((link, index) => {
-          const isExternalLink = link.url.startsWith('http') || link.url.startsWith('#');
           const className = link.isSecondary ? 'secondary' : 'primary';
 
-          return isExternalLink ? (
+          return link.isExternalLink ? (
             <a
               key={index}
               href={link.url}

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss'
 import LinksSection from './components/LinksSection/LinkSection';
 import Profile from './components/Profile/Profile';
@@ -7,7 +7,7 @@ import { linkSections } from '../data/linksSection';
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <Routes>
         <Route path="/" element={
           <div className="container">

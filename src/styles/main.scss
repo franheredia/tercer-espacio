@@ -13,7 +13,7 @@ body {
   background-color: $bg-dark;
   color: $text-inverse;
   margin: 0;
-  font-weight: 300;
+  font-weight: $font-weight-normal;
 }
 
 // Contenedor principal

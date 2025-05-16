@@ -1,7 +1,7 @@
 @use './styles/variables' as *;
 
 .footer {
-    margin-top: $spacing-medium;
+    margin: $spacing-medium 0;
     font-size: $font-size-base;
     color: $text-secondary;
 }

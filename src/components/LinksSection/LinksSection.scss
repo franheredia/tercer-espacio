@@ -73,12 +73,6 @@
 
     .links {
       gap: $spacing-small;
-
-      &:hover {
-        pointer-events: none;
-        transform: none;
-        box-shadow: none;
-      }
     }
   }
 } 

@@ -1,4 +1,5 @@
 export interface Link {
+  isExternalLink: boolean;
   title: string;
   url: string;
   isSecondary?: boolean;
