@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LinksSection.scss';
-import type { LinkSection as LinkSectionType } from '../../types/links';
+import type { LinkSection as LinkSectionType } from '@/types';
 
 interface LinksSectionProps {
   section: LinkSectionType;

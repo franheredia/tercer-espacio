@@ -1,4 +1,4 @@
-import { Workshop } from '../types';
+import type { Workshop } from '@/types';
 
 export const workshops: Workshop[] = [
     {

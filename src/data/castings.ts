@@ -1,4 +1,4 @@
-import { Casting } from '../types';
+import type { Casting } from '@/types';
 
 export const completeCastings: Casting[] = [
     {

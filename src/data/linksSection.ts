@@ -1,4 +1,4 @@
-import type { Link } from "../src/types/links";
+import type { Link } from "@/types";
 
 export const linkSections: {title: string, links: Link[]}[] = [
   {
