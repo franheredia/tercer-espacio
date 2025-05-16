@@ -10,7 +10,7 @@ export const linkSections = [
     {
       title: "Disponibilidad Horaria",
       links: [
-        { title: "Ver horarios disponibles", url: "#/horarios" }
+        { title: "Ver horarios disponibles", url: "./horarios" }
       ]
     },
     {

@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
   return (
     <div className="profile">
       <img
-        src={`${import.meta.env.BASE_URL}images/profile-picture.png`}
+        src={`${import.meta.env.BASE_URL}images/profile-picture.webp`}
         alt="Logo de Tercer Espacio"
         className="profile-picture"
       />

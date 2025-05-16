@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+
+.schedule-content {
+  box-shadow: 0 4px 6px $shadow-soft;
+
+  iframe {
+    border-radius: $border-radius-small;
+    background-color: $bg-darker;
+    box-shadow: 0 2px 4px $shadow-soft;
+  }
+} 
