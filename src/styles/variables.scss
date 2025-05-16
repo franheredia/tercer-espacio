@@ -1,19 +1,102 @@
-// Colors
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-$success-color: #28a745;
-$error-color: #dc3545;
+// ===============================
+// 🎨 Primary (Principal)
+// ===============================
+$primary-light: #F4B3CB;
+$primary: #EC7198;
+$primary-dark: #CC3366;
+
+// ===============================
+// 🌐 Backgrounds (Fondos)
+// ===============================
+$bg-light: #7A9AF4;
+$bg-base: #2552F2;
+$bg-dark: #003399;
+$bg-darker: #002266;
+$bg-accent: #B29BF9;
+$bg-contrast: #4C35AA;
+
+// ===============================
+// 📦 Borders (Bordes)
+// ===============================
+$border-primary: $primary;
+$border-secondary: $bg-dark;
+$border-accent: #F3B24F;
+$border-error: #CC3366;
+
+// ===============================
+// ✍️ Text Colors (Textos)
+// ===============================
+$text-primary: #001d57;
+$text-secondary: #F3B24F;
+$text-link: #002266;
+$text-inverse: #FFFFFF;
+$text-error: #CC3366;
+
+// ===============================
+// 💡 Accents (Acentos)
+// ===============================
+$accent-positive: #42CCC8;
+$accent-negative: #D38824;
+$accent-neutral: $primary-light;
+
+// ===============================
+// 🪄 Utilities (Utilidades Especificas)
+// ===============================
+$color-whatsapp: #25D366;
+$color-whatsapp-accent: #DCF8C6;
+
+// ===============================
+// ✨ Shadows (Sombras)
+// ===============================
+$shadow-soft: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.2);
+$shadow-hard: rgba(0, 0, 0, 0.4);
+
+// ===============================
+// 🔁 States (Estados)
+// ===============================
+$state-hover: $primary-light;
+$state-active: $primary-dark;
+$state-disabled: #553944;
+
+// ===============================
+// 🏗️ Opacities (Opacidades)
+// ===============================
+$opacity-light: 0.1;
+$opacity-medium: 0.5;
+$opacity-strong: 0.8;
+
+// ===============================
+// 📏 Breakpoints
+// ===============================
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// ===============================
+// 🔲 Border Radius
+// ===============================
+$border-radius: 20px;
+$border-radius-small: 10px;
+$border-radius-large: 30px;
+
+// ===============================
+// ⚡ Transitions
+// ===============================
+$transition-default: all 0.20s ease;
+$transition-fast: all 0.13s ease;
+$transition-slow: all 0.3s ease;
+
+// ===============================
+// 🔤 Typography
+// ===============================
+$font-brand: 'Brice', sans-serif;
+$font-main: 'Gotham', sans-serif;
 
 // Typography
 $font-family-base: 'Arial', sans-serif;
 $font-size-base: 16px;
 $line-height-base: 1.5;
-
-// Breakpoints
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
 
 // Spacing
 $spacing-unit: 8px;
