@@ -145,6 +145,9 @@ La aplicación está configurada para desplegarse en GitHub Pages. Para desplega
 
 - Node.js >= 18.0.0
 - npm >= 9.0.0
+- React >= 19.1.0
+- TypeScript >= 5.8.3
+- Vite >= 6.3.5
 
 ## Instalación
 
