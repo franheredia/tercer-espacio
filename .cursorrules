@@ -7,7 +7,7 @@ naming:
   directories: kebab-case
   components: PascalCase
   styles: PascalCase,kebab-case
-  types: kebab-case
+  types: PascalCase
   constants: kebab-case
   hooks: camelCase
 
@@ -16,11 +16,13 @@ structure:
   root:
     - src/
     - public/
-    - data/
   src:
+    - App.tsx
+    - main.tsx
     - assets/
     - components/
     - constants/
+    - data/
     - pages/
     - styles/
     - types/

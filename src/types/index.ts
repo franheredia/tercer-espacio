@@ -1,4 +1,9 @@
+/**
+ * Propiedades de un espacio físico
+ * @interface Space
+ */
 export interface Space {
+  /** Identificador único del espacio */
   id: string;
   name: string;
   description: string;
@@ -6,6 +11,10 @@ export interface Space {
   calendarColor: string;
 }
 
+/**
+ * Propiedades para el componente Schedule
+ * @interface ScheduleProps
+ */
 export interface ScheduleProps {
   spaceNumber: string;
   spaceName: string;
@@ -37,14 +46,26 @@ export interface Workshop {
   status: 'active' | 'coming_soon' | 'finished';
 }
 
+/**
+ * Propiedades para un enlace individual
+ * @interface Link
+ */
 export interface Link {
+  /** Indica si el enlace es externo al proyecto */
   isExternalLink: boolean;
+  /** Título del enlace */
   title: string;
+  /** URL del enlace */
   url: string;
+  /** Indica si es un enlace de estilo secundario */
   isSecondary?: boolean;
 }
 
-export interface LinkSection {
+/**
+ * Propiedades de la sección de enlaces
+ * @interface LinksSectionsProps
+ */
+export interface LinksSectionsProps {
   title: string;
   links: Link[];
 } 

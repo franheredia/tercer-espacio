@@ -189,7 +189,7 @@ src={`${import.meta.env.BASE_URL}images/nombre-imagen.png`}
 - Enlaces a redes sociales con iconos SVG
 - Totalmente responsivo
 
-### LinkSection
+### LinksSection
 - Sección de enlaces tipo Linktree
 - Soporta enlaces primarios y secundarios
 - Animaciones en hover

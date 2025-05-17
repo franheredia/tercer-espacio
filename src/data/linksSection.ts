@@ -1,6 +1,6 @@
 import type { Link } from "@/types";
 
-export const linkSections: {title: string, links: Link[]}[] = [
+export const linksSections: {title: string, links: Link[]}[] = [
   {
     title: "Información General",
     links: [

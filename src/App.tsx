@@ -1,11 +1,11 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
-import LinksSection from '@/components/LinksSection/LinkSection';
+import LinksSection from '@/components/LinksSection/LinksSection';
 import Profile from '@/components/Profile/Profile';
 import Schedules from '@/pages/Schedules';
-import { linkSections } from '@/data/linksSection';
-import type { LinkSection } from '@/types';
+import { linksSections } from '@/data/linksSection';
+import type { LinksSectionsProps } from '@/types';
 
 /**
  * Componente principal de la aplicación
@@ -20,7 +20,7 @@ export const App: React.FC = () => {
           element={
             <div className="app">
               <Profile />
-              {linkSections.map((section: LinkSection, index: number) => (
+              {linksSections.map((section: LinksSectionsProps, index: number) => (
                 <LinksSection key={index} section={section} />
               ))}
               <div className="app__footer">

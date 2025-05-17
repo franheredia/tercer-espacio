@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import Schedule from '../components/Schedule';
-import { NavbarContainer } from '../components/Navbar';
-import { spaces } from '../data/spaces';
-import type { Space } from '../types';
+import Schedule from '@/components/Schedule';
+import { NavbarContainer } from '@/components/Navbar';
+import { spaces } from '@/data/spaces';
+import type { Space } from '@/types';
 import './Schedules.scss';
 
+/**
+ * Página de horarios que muestra la disponibilidad de los espacios
+ * y permite realizar reservas
+ * @returns Componente de página de horarios
+ */
 const Schedules: React.FC = () => {
   const [selectedSpace, setSelectedSpace] = useState<Space>(spaces[0]);
   const wppMessage = encodeURIComponent(`Hola Tercer Espacio! Me gustaría reservar un horario en el ${selectedSpace.name}`);

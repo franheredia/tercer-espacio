@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LinksSection.scss';
-import type { LinkSection as LinkSectionType } from '@/types';
+import type { LinksSectionsProps } from '@/types';
 
 interface LinksSectionProps {
-  section: LinkSectionType;
+  section: LinksSectionsProps;
 }
 
+/**
+ * Componente que renderiza una sección de enlaces
+ * @component
+ * @param {LinksSectionProps} props - Propiedades del componente
+ * @returns {React.ReactElement} Sección de enlaces renderizada
+ */
 const LinksSection: React.FC<LinksSectionProps> = ({ section }) => {
   return (
     <section className="link-section">
