@@ -12,7 +12,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DGRdwTQxJQi/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/actuación.webp"
+        image: "images/workshops/actuación.webp"
     },
     {
         title: "Canto y Autoconfianza",
@@ -25,7 +25,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DGeTgGwRpao/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/canto-autoconfianza.webp"
+        image: "images/workshops/canto-autoconfianza.webp"
     },
     {
         title: "Canto Grupal",
@@ -38,7 +38,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DGUETEAxXP8/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/canto-grupal.webp"
+        image: "images/workshops/canto-grupal.webp"
     },
     {
         title: "Danza y Composición",
@@ -51,7 +51,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://drive.google.com/file/d/1hUThmgkUHOzlrH1HTm6Fs-EwmbrFHZlT/view?usp=sharing"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/danza-composición.webp"
+        image: "images/workshops/danza-composición.webp"
     },
     {
         title: "Guitarra",
@@ -64,7 +64,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DH4dzsUR14N/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/guitarra.webp"
+        image: "images/workshops/guitarra.webp"
     },
     {
         title: "Formación Actoral",
@@ -77,7 +77,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DG4BfKvxQfE/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/kike.webp"
+        image: "images/workshops/formación-actoral.webp"
     },
     {
         title: "Impro Teatral",
@@ -90,7 +90,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DGor2Awxkk7/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/impro.webp"
+        image: "images/workshops/impro.webp"
     },
     {
         title: "Piano Creativo",
@@ -103,7 +103,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DGO7d8wxuQi/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/piano.webp"
+        image: "images/workshops/piano.webp"
     },
     {
         title: "Violín",
@@ -116,6 +116,6 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DH4dzsUR14N/"
         },
         status: "active",
-        image: "/tercer-espacio/src/assets/images/violín.webp"
+        image: "images/workshops/violín.webp"
     }
 ]; 

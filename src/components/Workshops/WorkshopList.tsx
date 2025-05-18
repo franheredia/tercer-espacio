@@ -46,7 +46,7 @@ const WorkshopList: React.FC<WorkshopListProps> = ({ workshops }) => {
             <div key={index} className={`workshop-card ${workshop.status}`}>
               {workshop.image && (
                 <div className="workshop-image">
-                  <img src={workshop.image} alt={workshop.title} loading="lazy" />
+                  <img src={`${import.meta.env.BASE_URL}${workshop.image}`} alt={workshop.title} loading="lazy" />
                 </div>
               )}
               <div className="workshop-content">
