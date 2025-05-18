@@ -3,7 +3,7 @@
 // Componente de perfil principal
 .profile {
   // Box Model
-  padding: $spacing-large 0;
+  padding: $spacing-small 0 $spacing-large 0;
   margin: 0 auto;
   
   // Typography
@@ -12,8 +12,8 @@
   // Imagen de perfil
   &__picture {
     // Box Model
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     margin-bottom: $spacing-medium;
     
     // Visual
