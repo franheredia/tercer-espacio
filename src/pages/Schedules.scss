@@ -1,10 +1,6 @@
-@use '../styles/variables' as *;
+@use '@/styles/variables' as *;
 
 .schedules {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0;
 
   &__selector {
     display: flex;
@@ -26,8 +22,8 @@
     padding: $spacing-small $spacing-medium;
     border: 2px solid $bg-darker;
     background-color: $primary;
-    color: $text-inverse;
-    border-radius: $border-radius;
+    color: $text-primary;
+    border-radius: $border-radius-small;
     font-family: $font-main;
     font-size: $font-size-base;
     cursor: pointer;
@@ -35,6 +31,7 @@
 
     &:hover {
       background-color: $primary-dark;
+      color: $text-inverse;
     }
 
     &--active {
@@ -48,16 +45,17 @@
     background-color: $accent-positive;
     color: $text-primary;
     padding: $spacing-small $spacing-medium;
-    border-radius: $border-radius;
+    border-radius: $border-radius-small;
     text-decoration: none;
     font-family: $font-main;
     font-size: $font-size-base;
     transition: $transition-default;
-    border: none;
+    border: 2px solid $accent-positive;
 
     &:hover {
-      background-color: $color-whatsapp;
-      color: $bg-dark;
+      background-color: $accent-positive-dark;
+      color: $text-inverse;
+      border-color: $accent-positive-dark;
     }
   }
 }
