@@ -16,7 +16,7 @@ const Schedules: React.FC = () => {
 
   return (
     <NavbarContainer title="Disponibilidad Horaria">
-      <div className="schedules container">
+      <div className="schedules">
         <div className="schedules__selector">
           <div className="schedules__buttons">
             {spaces.map((space) => (

@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ title }) => {
  */
 export const NavbarContainer: React.FC<NavbarContainerProps> = ({ title, children }) => {
   return (
-    <div className="navbar-layout">
+    <div className="navbar-layout container">
       <Navbar title={title} />
       <main className="navbar-layout__content">
         {children}

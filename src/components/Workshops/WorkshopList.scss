@@ -1,0 +1,181 @@
+@use '@/styles/variables' as *;
+
+.workshops-container {
+
+  .filter-buttons {
+    display: none; // TODO: Replace this with flex when we have more than one filter
+    justify-content: center;
+    gap: $spacing-medium;
+    margin-bottom: $spacing-large;
+    flex-wrap: wrap;
+
+    .filter-btn {
+      color: $text-primary;
+      background-color: $primary;
+      font-weight: $font-weight-bold;
+      border: 2px solid $bg-darker;
+      padding: $spacing-small $spacing-medium;
+      border-radius: $border-radius-small;
+      font-family: $font-main;
+      font-size: $font-size-base;
+      cursor: pointer;
+      transition: $transition-default;
+
+      &:hover,
+      &.active {
+        background-color: $primary-dark;
+        color: $text-inverse;
+      }
+    }
+  }
+
+  .workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-large;
+
+    .workshop-card {
+      border: 2px solid $bg-darker;
+      background-color: $bg-accent;
+      border-radius: $border-radius;
+      overflow: hidden;
+      transition: $transition-default;
+      box-shadow: 0 2px 4px $shadow-soft;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 8px $shadow-medium;
+      }
+
+      &.coming_soon {
+        opacity: $opacity-strong;
+        position: relative;
+
+        &::after {
+          content: 'Próximamente';
+          position: absolute;
+          top: $spacing-small;
+          right: $spacing-small;
+          background-color: $bg-contrast;
+          color: $text-inverse;
+          border-radius: $border-radius-small;
+          font-size: $font-size-sm;
+        }
+      }
+
+      .workshop-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .workshop-content {
+        padding: $spacing-medium;
+        color: $text-primary;
+
+        h2 {
+          font-size: $font-size-2xl;
+          margin-bottom: $spacing-small;
+        }
+
+        .description {
+          margin-bottom: $spacing-medium;
+          line-height: $line-height-base;
+          opacity: $opacity-strong;
+        }
+
+        .workshop-details {
+          background-color: $bg-contrast;
+          padding: $spacing-medium;
+          border-radius: $border-radius-small;
+          margin-bottom: $spacing-medium;
+
+          p {
+            color: $text-inverse;
+            margin-bottom: $spacing-small;
+            font-size: $font-size-sm;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            strong {
+              color: $primary-light;
+              font-weight: $font-weight-bold;
+            }
+          }
+        }
+
+        .workshop-buttons {
+          display: flex;
+          gap: $spacing-small;
+          margin-top: $spacing-medium;
+
+          a {
+            color: $text-inverse;
+            flex: 1;
+            text-align: center;
+            padding: $spacing-small $spacing-medium;
+            border-radius: $border-radius-small;
+            font-size: $font-size-base;
+            text-decoration: none;
+            transition: $transition-default;
+            background-color: $bg-base;
+            
+            &:hover {
+              background-color: $bg-darker;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .no-results {
+    text-align: center;
+    padding: $spacing-large;
+    color: $text-inverse;
+    opacity: $opacity-strong;
+
+    h3 {
+      font-family: $font-brand;
+      font-size: $font-size-xl;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .workshops-container {
+    .filter-buttons {
+      gap: $spacing-small;
+      margin-bottom: $spacing-medium;
+
+      .filter-btn {
+        font-size: $font-size-sm;;
+      }
+    }
+
+    .workshops-grid {
+      gap: $spacing-medium;
+
+      .workshop-card {
+        .workshop-content {
+
+          h2 {
+            font-size: $font-size-xl;
+          }
+
+          .workshop-details {
+            padding: $spacing-small;
+          }
+        }
+      }
+    }
+  }
+}

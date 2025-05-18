@@ -13,9 +13,7 @@ import './Castings.scss';
 const Castings: React.FC = (): JSX.Element => {
   return (
     <NavbarContainer title="Castings">
-      <div className="container">
         <CastingList castings={completeCastings} />
-      </div>
     </NavbarContainer>
   );
 };

@@ -29,12 +29,7 @@
     cursor: pointer;
     transition: $transition-default;
 
-    &:hover {
-      background-color: $primary-dark;
-      color: $text-inverse;
-    }
-
-    &--active {
+    &:hover, &--active {
       background-color: $primary-dark;
       color: $text-inverse;
     }
