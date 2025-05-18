@@ -1,0 +1,28 @@
+@import '@/styles/variables';
+
+.castings {
+  &__container {
+    // Positioning
+    position: relative;
+    
+    // Box Model
+    width: 100%;
+    max-width: $breakpoint-desktop;
+    margin: 0 auto;
+    padding: $spacing-medium;
+
+    // Typography
+    font-family: $font-main;
+    color: $text-primary;
+    
+    // Visual
+    background-color: $bg-light;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 4px $shadow-soft;
+    transition: $transition-default;
+    
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-small;
+    }
+  }
+} 

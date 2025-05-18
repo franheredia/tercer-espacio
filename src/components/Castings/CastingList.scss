@@ -1,0 +1,68 @@
+@import '@/styles/variables';
+
+.castings-container {
+
+  .workshop-card {
+    background-color: $bg-accent;
+    border-radius: $border-radius-small;
+    border: 2px solid $bg-darker;
+    overflow: hidden;
+    transition: $transition-default;
+    box-shadow: 0 2px 4px $shadow-soft;
+    margin-bottom: $spacing-medium;
+    padding: $spacing-large;
+    color: $text-primary;
+
+    &:hover {
+      box-shadow: 0 4px 8px $shadow-medium;
+      transform: translateY(-2px);
+    }
+
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.4;
+    }
+
+    .workshop-buttons {
+      display: flex;
+      margin: $spacing-medium auto 0;
+      justify-content: space-around;
+
+      a {
+        padding: $spacing-small $spacing-medium;
+        border-radius: $border-radius-small;
+        text-decoration: none;
+        font-family: $font-main;
+        font-weight: $font-weight-bold;
+        transition: $transition-default;
+        background-color: $primary;
+        color: $text-inverse;
+        border: 2px solid $bg-darker;
+
+        &:hover {
+          background-color: $primary-dark;
+        }
+
+        &.wpp-btn {
+          background-color: $accent-positive;
+          color: $text-primary;
+
+          &:hover {
+            background-color: $accent-positive-dark;
+            color: $text-inverse;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .castings-container {
+    .workshop-card {
+      h2 {
+        font-size: $font-size-xl;
+      }
+    }
+  }
+} 

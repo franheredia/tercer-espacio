@@ -1,0 +1,71 @@
+import React, { useState } from 'react';
+import type { Casting, Gender } from '@/types';
+import GenderFilter from './GenderFilter';
+import './CastingList.scss';
+
+interface CastingListProps {
+  castings: Casting[];
+}
+
+const CastingList: React.FC<CastingListProps> = ({ castings }) => {
+  const [selectedGender, setSelectedGender] = useState<Gender>('any');
+
+  const filteredCastings = castings.filter(casting => 
+    selectedGender === 'any' || casting.gender === selectedGender || casting.gender === 'any'
+  );
+
+  const handleGenderChange = (gender: Gender) => {
+    setSelectedGender(gender);
+  };
+
+  return (
+    <div className="castings-container">
+      <GenderFilter selectedGender={selectedGender} onGenderChange={handleGenderChange} />
+      
+      {filteredCastings.length > 0 ? (
+        filteredCastings.map((casting, index) => {
+          const wppMessage = encodeURIComponent(
+            `Hola, ví en la página de Tercer Espacio que tienen un casting abierto para ${casting.title}! En breve te envío ${casting.requiredInfo}`
+          );
+
+          return (
+            <div key={index} className="workshop-card">
+              <h2>{casting.title}</h2>
+              <p>{casting.fisic}</p>
+              <p>{casting.description}</p>
+              <div className="workshop-buttons">
+                {casting.infoUrl && (
+                  <a
+                    href={casting.infoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Más info
+                  </a>
+                )}
+                {casting.phone && (
+                  <a
+                    title="Chatear con la persona encargada por WhatsApp"
+                    href={`https://wa.me/${casting.phone}?text=${wppMessage}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wpp-btn"
+                  >
+                    WhatsApp
+                  </a>
+                )}
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <div className="workshop-card">
+          <h2>No hay castings compatibles</h2>
+          <p>Ningún casting coincide con la búsqueda</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CastingList; 

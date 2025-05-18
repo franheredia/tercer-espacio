@@ -5,6 +5,7 @@ import './App.scss';
 import LinksSection from '@/components/LinksSection/LinksSection';
 import Profile from '@/components/Profile/Profile';
 import Schedules from '@/pages/Schedules';
+import Castings from '@/pages/Castings';
 import { linksSections } from '@/data/linksSection';
 import type { LinksSectionsProps } from '@/types';
 
@@ -39,6 +40,7 @@ export const App: React.FC = (): JSX.Element => {
           } 
         />
         <Route path="/horarios" element={<Schedules />} />
+        <Route path="/castings" element={<Castings />} />
       </Routes>
     </Router>
   );
