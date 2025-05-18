@@ -6,7 +6,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('#{$base-url}fonts/Brice-Bold.otf') format('opentype');
+  src: url('/tercer-espacio/fonts/Brice-Bold.otf') format('opentype');
 }
 
 // Gotham Font
@@ -15,7 +15,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('#{$base-url}fonts/Gotham-Light.otf') format('opentype');
+  src: url('/tercer-espacio/fonts/Gotham-Light.otf') format('opentype');
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('#{$base-url}fonts/Gotham-Medium.otf') format('opentype');
+  src: url('/tercer-espacio/fonts/Gotham-Medium.otf') format('opentype');
 }
 
 @font-face {
@@ -31,5 +31,5 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('#{$base-url}fonts/Gotham-Bold.otf') format('opentype');
+  src: url('/tercer-espacio/fonts/Gotham-Bold.otf') format('opentype');
 }
