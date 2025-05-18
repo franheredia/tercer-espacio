@@ -2,7 +2,7 @@
 
 .castings-container {
 
-  .workshop-card {
+  .casting-card {
     background-color: $bg-accent;
     border-radius: $border-radius-small;
     border: 2px solid $bg-darker;
@@ -23,7 +23,7 @@
       line-height: 1.4;
     }
 
-    .workshop-buttons {
+    .casting-buttons {
       display: flex;
       margin: $spacing-medium auto 0;
       justify-content: space-around;
@@ -59,7 +59,7 @@
 
 @media (max-width: $breakpoint-mobile) {
   .castings-container {
-    .workshop-card {
+    .casting-card {
       h2 {
         font-size: $font-size-xl;
       }

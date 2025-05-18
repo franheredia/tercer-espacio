@@ -29,11 +29,11 @@ const CastingList: React.FC<CastingListProps> = ({ castings }) => {
           );
 
           return (
-            <div key={index} className="workshop-card">
+            <div key={index} className="casting-card">
               <h2>{casting.title}</h2>
               <p>{casting.fisic}</p>
               <p>{casting.description}</p>
-              <div className="workshop-buttons">
+              <div className="casting-buttons">
                 {casting.infoUrl && (
                   <a
                     href={casting.infoUrl}
@@ -59,7 +59,7 @@ const CastingList: React.FC<CastingListProps> = ({ castings }) => {
           );
         })
       ) : (
-        <div className="workshop-card">
+        <div className="casting-card">
           <h2>No hay castings compatibles</h2>
           <p>Ningún casting coincide con la búsqueda</p>
         </div>
