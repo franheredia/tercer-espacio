@@ -15,6 +15,7 @@ const WorkshopList: React.FC<WorkshopListProps> = ({ workshops }) => {
 
   return (
     <div className="workshops-container">
+      <div></div>
       <div className="filter-buttons">
         <button
           className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
