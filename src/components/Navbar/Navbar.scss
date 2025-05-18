@@ -1,104 +1,137 @@
 @use '../../styles/variables' as *;
 
+// Componente principal de navegación
 .navbar {
+  // Positioning
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: $bg-darker;
-  padding: $spacing-small $spacing-medium;
+
+  // Box Model
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: $spacing-small $spacing-medium;
+
+  // Visual
+  background-color: $bg-darker;
   box-shadow: 0 2px 4px $shadow-soft;
 
-  .navbar-content {
+  // Secciones de la navbar
+  &__section {
+    // Box Model
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
-    .back-button {
-      padding: 0.3rem 0.8rem;
+    &--left,
+    &--right {
+      // Box Model
+      width: 60px;
     }
 
-    h1 {
-      font-size: 1.2rem;
-      margin: 0;
-    }
-  }
-
-  a {
-    color: $text-inverse;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: $transition-default;
-
-    &:hover {
-      color: $primary-light;
+    &--center {
+      // Box Model
+      flex: 1;
+      justify-content: center;
     }
   }
 
-  .nav-back {
-    width: 60px;
+  // Enlaces
+  &__link {
+    // Box Model
+    display: flex;
+    align-items: center;
+
+    // Typography
     color: $text-inverse;
     text-decoration: none;
     font-size: $font-size-xl;
-    display: flex;
-    align-items: center;
+
+    // Visual
     transition: $transition-default;
 
-    span {
-      display: block;
-      transform: translateX(0);
+    &--back {
+      // Visual
       transition: $transition-default;
     }
 
-    &:hover span {
+    &--home {
+      // Box Model
+      justify-content: flex-end;
+    }
+  }
+
+  // Flecha de retroceso
+  &__arrow {
+    // Box Model
+    display: block;
+
+    // Visual
+    transform: translateX(0);
+    transition: $transition-default;
+
+    .navbar__link--back:hover & {
       transform: translateX(-4px);
     }
   }
 
-  .nav-title {
+  // Título
+  &__title {
+    // Box Model
+    margin: 0;
+
+    // Typography
     font-family: $font-main;
     font-size: $font-size-xl;
-    color: $text-inverse;
-    margin: 0;
     font-weight: $font-weight-bold;
+    color: $text-inverse;
   }
 
-  .nav-profile {
-    display: flex;
-    align-items: center;
+  // Logo
+  &__logo {
+    // Box Model
+    width: 60px;
 
-    .nav-logo {
-      width: 60px;
-      transition: $transition-default;
+    // Visual
+    transition: $transition-default;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
 
-.navbar-margin {
-  margin-top: 62px;
+// Layout del contenedor
+.navbar-layout {
+  &__content {
+    // Box Model
+    margin-top: 62px;
+    width: 100%;
+  }
 }
 
+// Media queries
 @media (max-width: $breakpoint-mobile) {
   .navbar {
+    // Box Model
     padding: $spacing-small;
 
-    .nav-title {
+    &__section {
+      &--left,
+      &--right {
+        width: 40px;
+      }
+    }
+
+    &__title {
+      // Typography
       font-size: $font-size-lg;
     }
 
-    .nav-profile .nav-logo {
-      width: 40px;
-    }
-
-    .nav-back {
+    &__logo {
+      // Box Model
       width: 40px;
     }
   }

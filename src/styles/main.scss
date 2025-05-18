@@ -8,17 +8,26 @@
 }
 
 body {
-  font-family: $font-main;
-  text-align: center;
-  background-color: $bg-dark;
-  color: $text-inverse;
+  // Positioning
+  position: relative;
+  
+  // Box-model
   margin: 0;
+  
+  // Typography
+  font-family: $font-main;
   font-weight: $font-weight-normal;
+  text-align: center;
+  color: $text-inverse;
+  
+  // Visual
+  background-color: $bg-dark;
 }
 
 // Contenedor principal
 .container {
-  max-width: $breakpoint-desktop;;
+  // Box-model
+  max-width: $breakpoint-desktop;
   margin: 0 auto;
   padding: $spacing-medium;
 }
@@ -27,25 +36,5 @@ body {
   .container {
     max-width: 95%;
     padding: 0;
-  }
-}
-
-// Margins
-.mt-1 { margin-top: $spacing-small; }
-.mt-2 { margin-top: $spacing-medium; }
-.mt-3 { margin-top: $spacing-large; }
-
-.mb-1 { margin-bottom: $spacing-small; }
-.mb-2 { margin-bottom: $spacing-medium; }
-.mb-3 { margin-bottom: $spacing-large; }
-
-// Enlaces
-a {
-  color: $text-link;
-  text-decoration: none;
-  transition: $transition-fast;
-
-  &:hover {
-    color: $primary;
   }
 }

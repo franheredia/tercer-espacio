@@ -1,76 +1,106 @@
 @use '../../styles/variables' as *;
 
+// Componente de perfil principal
 .profile {
-  text-align: center;
+  // Box Model
   padding: $spacing-large 0;
   margin: 0 auto;
+  
+  // Typography
+  text-align: center;
 
-  .profile-picture {
+  // Imagen de perfil
+  &__picture {
+    // Box Model
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     margin-bottom: $spacing-medium;
+    
+    // Visual
+    border-radius: 50%;
     border: 3px solid $border-accent;
     object-fit: cover;
     transition: $transition-default;
   }
 
-  .brand-name {
+  // Título principal
+  &__title {
+    // Box Model
+    margin-bottom: $spacing-small;
+    
+    // Typography
     font-family: $font-brand;
     font-size: $font-size-3xl;
-    color: $text-inverse;
-    margin-bottom: $spacing-small;
     font-weight: $font-weight-bold;
+    color: $text-inverse;
   }
 
-  .subtitle {
-    color: $text-secondary;
-    font-size: $font-size-lg;
+  // Subtítulo
+  &__subtitle {
+    // Box Model
     margin-bottom: $spacing-medium;
+    
+    // Typography
     font-family: $font-main;
+    font-size: $font-size-lg;
+    color: $text-secondary;
   }
 
-  .social-icons {
+  // Contenedor de iconos sociales
+  &__social {
+    // Box Model
     display: flex;
     justify-content: center;
     gap: $spacing-medium;
     margin-top: $spacing-medium;
+  }
 
-    .social-media-icon {
-      svg {
-        height: 45px;
-        width: 45px;
-        fill: $primary;
-        transition: $transition-default;
+  // Enlaces sociales
+  &__social-link {
+    // Box Model
+    display: block;
+  }
 
-        &:hover {
-          fill: $primary-light;
-          transform: translateY(-2px);
-          filter: drop-shadow(0 4px 4px $shadow-soft);
-        }
+  // Iconos SVG
+  &__social-icon {
+    // Box Model
+    height: 45px;
+    width: 45px;
+    
+    // Visual
+    fill: $primary;
+    transition: $transition-default;
 
-        &:active {
-          transform: translateY(0);
-        }
-      }
+    &:hover {
+      fill: $primary-light;
+      transform: translateY(-2px);
+      filter: drop-shadow(0 4px 4px $shadow-soft);
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
 }
 
+// Media queries
 @media (max-width: $breakpoint-mobile) {
   .profile {
+    // Box Model
     padding: $spacing-medium $spacing-small;
 
-    .profile-picture {
+    &__picture {
       width: 140px;
       height: 140px;
     }
 
-    .brand-name {
+    &__title {
+      // Typography
       font-size: $font-size-2xl;
     }
 
-    .subtitle {
+    &__subtitle {
+      // Typography
       font-size: $font-size-base;
     }
   }

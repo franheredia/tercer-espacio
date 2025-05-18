@@ -1,17 +1,25 @@
 @use '../../styles/variables' as *;
 
-.link-section {
+// Componente de sección de enlaces
+.links-section {
+  // Box Model
   margin-bottom: $spacing-large;
 
-  h2 {
+  // Título de la sección
+  &__title {
+    // Box Model
+    margin-bottom: $spacing-medium;
+    
+    // Typography
     font-family: $font-main;
     font-size: $font-size-2xl;
     color: $text-inverse;
-    margin-bottom: $spacing-medium;
     text-align: center;
   }
 
-  .links {
+  // Contenedor de enlaces
+  &__container {
+    // Box Model
     display: flex;
     flex-direction: column;
     gap: $spacing-medium;
@@ -19,59 +27,76 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+  }
 
-    a {
-      width: 100%;
-      padding: $spacing-medium;
-      text-align: center;
-      text-decoration: none;
-      font-family: $font-main;
-      font-weight: $font-weight-normal;
-      border-radius: $border-radius;
-      transition: $transition-default;
-      border: 2px solid $bg-darker;
-      
-      &.primary {
-        background-color: $primary;
-        color: $text-inverse;
+  // Enlaces base
+  &__link {
+    // Box Model
+    width: 100%;
+    padding: $spacing-medium;
+    
+    // Typography
+    text-align: center;
+    text-decoration: none;
+    font-family: $font-main;
+    font-weight: $font-weight-normal;
+    
+    // Visual
+    border-radius: $border-radius;
+    transition: $transition-default;
+    border: 2px solid $bg-darker;
 
-        &:hover {
-          background-color: $primary-dark;
-          border-color: $primary-dark;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 8px $shadow-soft;
-        }
+    // Modificador primario
+    &--primary {
+      // Visual
+      background-color: $primary;
+      color: $text-inverse;
+
+      &:hover {
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px $shadow-soft;
       }
+    }
 
-      &.secondary {
-        background-color: $bg-light;
-        color: $text-inverse;
+    // Modificador secundario
+    &--secondary {
+      // Visual
+      background-color: $bg-light;
+      color: $text-inverse;
 
-        &:hover {
-          background-color: $bg-base;
-          border-color: $bg-dark;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 8px $shadow-soft;
-        }
+      &:hover {
+        background-color: $bg-base;
+        border-color: $bg-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px $shadow-soft;
       }
+    }
 
-      &:active {
-        transform: translateY(0);
-      }
+    // Estado activo común
+    &:active {
+      transform: translateY(0);
     }
   }
 }
 
+// Media queries
 @media (max-width: $breakpoint-mobile) {
-  .link-section {
+  .links-section {
+    // Box Model
     margin: $spacing-medium 0;
 
-    h2 {
-      font-size: $font-size-base;
+    &__title {
+      // Box Model
       margin-bottom: $spacing-medium;
+      
+      // Typography
+      font-size: $font-size-base;
     }
 
-    .links {
+    &__container {
+      // Box Model
       gap: $spacing-small;
     }
   }

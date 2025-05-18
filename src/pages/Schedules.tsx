@@ -16,13 +16,13 @@ const Schedules: React.FC = () => {
 
   return (
     <NavbarContainer title="Disponibilidad Horaria">
-      <div className="schedules-container">
-        <div className="space-selector-container">
-          <div className="space-selector">
+      <div className="schedules">
+        <div className="schedules__selector">
+          <div className="schedules__buttons">
             {spaces.map((space) => (
               <button
                 key={space.id}
-                className={selectedSpace.id === space.id ? 'active' : ''}
+                className={`schedules__button ${selectedSpace.id === space.id ? 'schedules__button--active' : ''}`}
                 onClick={() => setSelectedSpace(space)}
               >
                 {space.name}
@@ -33,7 +33,7 @@ const Schedules: React.FC = () => {
             href={`https://wa.me/+5493518119701?text=${wppMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="wpp-btn"
+            className="schedules__whatsapp-button"
           >
             Hacé tu reserva
           </a>

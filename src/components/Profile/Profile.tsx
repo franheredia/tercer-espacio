@@ -1,13 +1,24 @@
 import React from 'react';
 import './Profile.scss';
-import { SOCIAL_MEDIA } from '../../constants/base';
+import { SOCIAL_MEDIA } from '@/constants/base';
 
+/**
+ * Interfaz para los iconos de redes sociales
+ * @interface SocialIcon
+ */
 interface SocialIcon {
+  /** URL del enlace social */
   href: string;
+  /** Etiqueta de accesibilidad */
   ariaLabel: string;
+  /** Path del SVG del icono */
   svgPath: string;
 }
 
+/**
+ * Configuración de los iconos sociales
+ * @constant
+ */
 const socialIcons: SocialIcon[] = [
   {
     href: SOCIAL_MEDIA.INSTAGRAM,
@@ -26,27 +37,32 @@ const socialIcons: SocialIcon[] = [
   }
 ];
 
+/**
+ * Componente de perfil que muestra la información principal y enlaces sociales
+ * @component
+ * @returns Componente Profile
+ */
 const Profile: React.FC = () => {
   return (
     <div className="profile">
       <img
         src={`${import.meta.env.BASE_URL}images/profile-picture.webp`}
         alt="Logo de Tercer Espacio"
-        className="profile-picture"
+        className="profile__picture"
       />
-      <h1 className="brand-name">Tercer Espacio</h1>
-      <p className="subtitle">~ Teatro y Casa Cultural ~</p>
-      <div className="social-icons">
+      <h1 className="profile__title">Tercer Espacio</h1>
+      <p className="profile__subtitle">~ Teatro y Casa Cultural ~</p>
+      <div className="profile__social">
         {socialIcons.map((icon, index) => (
           <a
             key={index}
             href={icon.href}
-            className="social-media-icon"
+            className="profile__social-link"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={icon.ariaLabel}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <svg className="profile__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d={icon.svgPath} />
             </svg>
           </a>
