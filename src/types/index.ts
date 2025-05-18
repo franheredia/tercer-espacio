@@ -38,7 +38,7 @@ export interface Casting {
   /** Título de la convocatoria */
   title: string;
   /** Género requerido para el papel */
-  gender: 'male' | 'female' | 'nonbinary' | 'any';
+  gender: Gender;
   /** Características físicas requeridas */
   fisic: string;
   /** Descripción detallada del papel */
@@ -50,6 +50,8 @@ export interface Casting {
   /** URL con información detallada */
   infoUrl: string;
 }
+
+export type Gender = 'any' | 'male' | 'female' | 'nonbinary';
 
 /**
  * Propiedades para un taller o workshop
