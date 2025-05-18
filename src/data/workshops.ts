@@ -77,7 +77,7 @@ export const workshops: Workshop[] = [
             infoUrl: "https://www.instagram.com/p/DG4BfKvxQfE/"
         },
         status: "active",
-        image: "images/workshops/formación-actoral.webp"
+        image: "images/workshops/kike.webp"
     },
     {
         title: "Impro Teatral",

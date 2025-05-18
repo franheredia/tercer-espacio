@@ -14,7 +14,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `$base-url: '/tercer-espacio/';`
+        additionalData: '$base-url: "/tercer-espacio/";'
       }
     }
   }

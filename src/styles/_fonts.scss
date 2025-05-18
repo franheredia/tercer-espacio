@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 // Brice Font
 @font-face {
   font-family: 'Brice';
@@ -31,5 +33,3 @@
   font-display: swap;
   src: url('#{$base-url}fonts/Gotham-Bold.otf') format('opentype');
 }
-
-@forward './variables'; 
