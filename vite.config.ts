@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/tercer-espacio/',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -14,7 +14,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '$base-url: "/tercer-espacio/";'
       }
     }
   }
