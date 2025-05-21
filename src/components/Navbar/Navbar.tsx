@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Arrow } from '@/components/Icons';
 import './Navbar.scss';
 
 /**
@@ -32,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ title }) => {
     <nav className="navbar">
       <div className="navbar__section navbar__section--left">
         <Link to="/" className="navbar__link navbar__link--back" aria-label="Volver al inicio">
-          <span className="navbar__arrow">◄</span>
+          <Arrow className="navbar__arrow" direction="left" />
         </Link>
       </div>
 

@@ -67,16 +67,18 @@
   // Flecha de retroceso
   &__arrow {
     // Box Model
-    display: block;
-    font-family: $font-main;
+    width: 24px;
+    height: 24px;
 
     // Visual
-    transform: translateX(0);
     transition: $transition-default;
+    fill: $text-inverse;
+    stroke: $text-inverse;
 
     .navbar__link--back:hover & {
-      transform: translateX(-4px);
-      color: $primary;
+      fill: $primary;
+      stroke: $primary;
+      transform: scale(1.2);
     }
   }
 
