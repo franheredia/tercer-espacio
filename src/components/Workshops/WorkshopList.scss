@@ -39,7 +39,7 @@
       background-color: $bg-accent;
       border-radius: $border-radius;
       overflow: hidden;
-      transition: $transition-default;
+      transition: $transition-slow;
       box-shadow: 0 2px 4px $shadow-soft;
 
       &:hover {
