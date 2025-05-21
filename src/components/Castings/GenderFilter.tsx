@@ -62,7 +62,7 @@ const GenderFilter: React.FC<GenderFilterProps> = ({ selectedGender, onGenderCha
           target="_blank"
           rel="noopener noreferrer"
         >
-          Agregar un casting
+          Agregá un casting
         </a>
       </div>
     </div>
