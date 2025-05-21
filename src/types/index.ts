@@ -49,6 +49,8 @@ export interface Casting {
   requiredInfo: string;
   /** URL con información detallada */
   infoUrl: string;
+  /** Fecha de finalización de la convocatoria */
+  endDate: Date;
 }
 
 export type Gender = 'any' | 'male' | 'female' | 'nonbinary';

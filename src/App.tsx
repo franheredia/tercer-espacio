@@ -45,6 +45,8 @@ export const App: React.FC = (): JSX.Element => {
         <Route path="/horarios" element={<Schedules />} />
         <Route path="/castings" element={<Castings />} />
         <Route path="/talleres" element={<Workshops />} />
+        <Route path="/qr-pages/1" element={<Schedules />} />
+        <Route path="/qr-pages/2" element={<Workshops />} />
       </Routes>
     </Router>
   );

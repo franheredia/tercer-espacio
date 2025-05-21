@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import type { Casting, Gender } from '@/types';
 import GenderFilter from './GenderFilter';
 import './CastingList.scss';
+import { isAfter, endOfYesterday } from 'date-fns';
 
 interface CastingListProps {
   castings: Casting[];
 }
 
 const CastingList: React.FC<CastingListProps> = ({ castings }) => {
-  const [selectedGender, setSelectedGender] = useState<Gender>('any');
+  const isCastingActive = (endDate: Date) => isAfter(endDate, endOfYesterday());
 
-  const filteredCastings = castings.filter(casting => 
-    selectedGender === 'any' || casting.gender === selectedGender || casting.gender === 'any'
+  const [selectedGender, setSelectedGender] = useState<Gender>('any');
+  const filteredCastings = castings.filter(casting =>
+    (selectedGender === 'any' || casting.gender === selectedGender || casting.gender === 'any') &&
+    isCastingActive(casting.endDate)
   );
 
   const handleGenderChange = (gender: Gender) => {
@@ -21,7 +24,7 @@ const CastingList: React.FC<CastingListProps> = ({ castings }) => {
   return (
     <div className="castings-container">
       <GenderFilter selectedGender={selectedGender} onGenderChange={handleGenderChange} />
-      
+
       {filteredCastings.length > 0 ? (
         filteredCastings.map((casting, index) => {
           const wppMessage = encodeURIComponent(

@@ -1,4 +1,5 @@
 import type { Casting } from '@/types';
+import { createDate } from '@/snippets';
 
 export const completeCastings: Casting[] = [
     {
@@ -8,7 +9,8 @@ export const completeCastings: Casting[] = [
         description: "Viáticos y Remuneración",
         phone: "5493541695958",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("21-05-2025")
     },
     {
         title: "Rol Masc. - Corto Universitario",
@@ -17,7 +19,8 @@ export const completeCastings: Casting[] = [
         description: "Viáticos y Remuneración",
         phone: "5493541695958",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     },
     {
         title: "Rol Fem. - Corto Universitario",
@@ -26,7 +29,8 @@ export const completeCastings: Casting[] = [
         description: "Viáticos y Remuneración",
         phone: "5493541695958",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     },
     {
         title: "Rol Masc. - Corto Universitario",
@@ -35,7 +39,8 @@ export const completeCastings: Casting[] = [
         description: "Remunerado",
         phone: "5493512064750",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     },
     {
         title: "Rol Masc. - Corto Universitario",
@@ -44,7 +49,8 @@ export const completeCastings: Casting[] = [
         description: "Remunerado",
         phone: "5493512064750",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     },
     {
         title: "Rol Fem. - Corto Universitario",
@@ -53,7 +59,8 @@ export const completeCastings: Casting[] = [
         description: "Remunerado",
         phone: "5493512064750",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     },
     {
         title: "Rol Fem. - Corto Universitario",
@@ -62,7 +69,8 @@ export const completeCastings: Casting[] = [
         description: "Remunerado",
         phone: "5493512064750",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     },
     {
         title: "Rol Fem. - Corto Universitario",
@@ -71,6 +79,7 @@ export const completeCastings: Casting[] = [
         description: "Remunerado",
         phone: "5493512064750",
         requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: ""
+        infoUrl: "",
+        endDate: createDate("25-05-2025")
     }
 ]; 
