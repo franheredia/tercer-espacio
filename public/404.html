@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo...</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+        // Obtener la ruta actual sin el dominio
+        const path = window.location.pathname;
+        
+        // Mapeo de rutas sin hash a rutas con hash
+        const routeMap = {
+            // Rutas principales
+            '/horarios': '/#/horarios',
+            '/castings': '/#/castings',
+            '/talleres': '/#/talleres',
+            
+            // Rutas de QR
+            '/qr-pages/1': '/#/horarios',
+            '/qr-pages/2': '/#/talleres'
+        };
+
+        // Si la ruta está en nuestro mapa, redirigir a la versión con hash
+        if (routeMap[path]) {
+            window.location.replace('https://tercerespacio.com.ar' + routeMap[path]);
+        } else {
+            // Si no es una ruta conocida, redirigir a la página principal
+            window.location.replace('https://tercerespacio.com.ar');
+        }
+    </script>
+</head>
+<body>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url='https://tercerespacio.com.ar'" />
+        <p>
+            Si no eres redirigido automáticamente,
+            <a href="https://tercerespacio.com.ar">haz clic aquí</a>.
+        </p>
+    </noscript>
+</body>
+</html> 
