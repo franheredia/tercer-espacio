@@ -25,7 +25,7 @@ const Schedules: React.FC = () => {
                 className={`schedules__button ${selectedSpace.id === space.id ? 'schedules__button--active' : ''}`}
                 onClick={() => setSelectedSpace(space)}
               >
-                {space.name}
+                {space.description}
               </button>
             ))}
           </div>
