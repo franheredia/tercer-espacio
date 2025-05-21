@@ -2,12 +2,12 @@ import React from 'react';
 import type { JSX } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
-import LinksSection from '@/components/LinksSection/LinksSection';
-import Profile from '@/components/Profile/Profile';
+import LinksSection from '@/components/LinksSection';
+import Profile from '@/components/Profile';
 import Schedules from '@/pages/Schedules';
 import Castings from '@/pages/Castings';
 import Workshops from '@/pages/Workshops';
-import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
+import ScrollToTop from '@/components/ScrollToTop';
 import { linksSections } from '@/data/linksSection';
 import type { LinksSectionsProps } from '@/types';
 
