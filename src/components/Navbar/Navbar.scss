@@ -140,4 +140,11 @@
       width: 45px;
     }
   }
+
+  .navbar-layout {
+    &__content {
+      // Box Model
+      margin-top: 53px;
+    }
+  }
 }
