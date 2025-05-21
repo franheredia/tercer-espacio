@@ -7,6 +7,7 @@ import Profile from '@/components/Profile/Profile';
 import Schedules from '@/pages/Schedules';
 import Castings from '@/pages/Castings';
 import Workshops from '@/pages/Workshops';
+import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 import { linksSections } from '@/data/linksSection';
 import type { LinksSectionsProps } from '@/types';
 
@@ -19,6 +20,7 @@ import type { LinksSectionsProps } from '@/types';
 export const App: React.FC = (): JSX.Element => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route 
           path="/" 
