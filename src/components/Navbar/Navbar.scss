@@ -43,6 +43,7 @@
     // Box Model
     display: flex;
     align-items: center;
+    width: 100%;
 
     // Typography
     color: $text-inverse;
@@ -67,7 +68,7 @@
   &__arrow {
     // Box Model
     display: block;
-    font-family: $font-brand;
+    font-family: $font-main;
 
     // Visual
     transform: translateX(0);
@@ -75,6 +76,7 @@
 
     .navbar__link--back:hover & {
       transform: translateX(-4px);
+      color: $primary;
     }
   }
 

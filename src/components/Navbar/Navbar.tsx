@@ -35,11 +35,11 @@ const Navbar: React.FC<NavbarProps> = ({ title }) => {
           <span className="navbar__arrow">◄</span>
         </Link>
       </div>
-      
+
       <div className="navbar__section navbar__section--center">
         <h1 className="navbar__title">{title}</h1>
       </div>
-      
+
       <div className="navbar__section navbar__section--right">
         <Link to="/" className="navbar__link navbar__link--home" aria-label="Ir al inicio">
           <img
