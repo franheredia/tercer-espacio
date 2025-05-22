@@ -5,7 +5,7 @@ export const linksSections: {title: string, links: Link[]}[] = [
     title: "Información General",
     links: [
       { title: "Talleres en Curso", isExternalLink: false, url: "talleres" },
-      { title: "¿Cómo trabajamos?", isExternalLink: true, url: "https://drive.google.com/file/d/1q9fUAtGcjSjz7gNuPGuWBpeu7rSgCCp8/view" },
+      { title: "¿Cómo trabajamos?", isExternalLink: true, url: "https://drive.google.com/file/d/1cLkMB-Sr5f2DBo3tEsG_7MvNgfpRFFW5/view" },
       { title: "Fotos y dimensiones del espacio", isExternalLink: true, url: "https://drive.google.com/file/d/1rr7gzHakELS6Se6ycWI_bu9gW1nGNzhf/view" }
     ]
   },
