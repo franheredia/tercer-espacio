@@ -35,26 +35,6 @@ export const completeCastings: Casting[] = [
     {
         title: "Rol Masc. - Corto Universitario",
         gender: "male",
-        fisic: "Aparentar 30 años, Rubio/Castaño claro, Ojos claros",
-        description: "Viáticos y Remuneración",
-        phone: "5493541695958",
-        requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: "",
-        endDate: createDate("25-05-2025")
-    },
-    {
-        title: "Rol Fem. - Corto Universitario",
-        gender: "female",
-        fisic: "Aparentar 31 años, cabello castaño lacio, Ojos marron",
-        description: "Viáticos y Remuneración",
-        phone: "5493541695958",
-        requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: "",
-        endDate: createDate("25-05-2025")
-    },
-    {
-        title: "Rol Masc. - Corto Universitario",
-        gender: "male",
         fisic: "Aparentar 25-30 años, tez clara, cabello largo castaño lacio, con barba",
         description: "Remunerado",
         phone: "5493512064750",
