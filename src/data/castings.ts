@@ -8,7 +8,7 @@ export const completeCastings: Casting[] = [
         fisic: "Entre 25-60 años",
         description: "Para sumarse a una obra teatral de Drama Psicológico con mucho trabajo corporal.",
         phone: "5493515329000",
-        requiredInfo: "foto de rostro y un video breve de presentación",
+        requiredInfo: "foto de mi rostro y un video con una breve de presentación",
         infoUrl: "",
         endDate: createDate("23-05-2025")
     },
