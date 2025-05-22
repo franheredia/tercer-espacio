@@ -3,22 +3,12 @@ import { createDate } from '@/snippets';
 
 export const completeCastings: Casting[] = [
     {
-        title: "Rol Fem - Mujer Adulta",
-        gender: "female",
-        fisic: "Aparentar 50-60 años",
-        description: "Remunerado. Rodaje el sábado 24 de mayo",
-        phone: "542664483324",
-        requiredInfo: "fotos de cuerpo completo y de rostro",
-        infoUrl: "",
-        endDate: createDate("23-05-2025")
-    },
-    {
-        title: "Rol Fem - Mujer Joven",
-        gender: "female",
-        fisic: "Aparentar 20-25 años",
-        description: "Remunerado. Rodaje el sábado 24 de mayo",
-        phone: "542664483324",
-        requiredInfo: "fotos de cuerpo completo y de rostro",
+        title: "Casting para obra de Teatro",
+        gender: "any",
+        fisic: "Entre 25-60 años",
+        description: "Para sumarse a una obra teatral de Drama Psicológico con mucho trabajo corporal.",
+        phone: "5493515329000",
+        requiredInfo: "foto de rostro y un video breve de presentación",
         infoUrl: "",
         endDate: createDate("23-05-2025")
     },
