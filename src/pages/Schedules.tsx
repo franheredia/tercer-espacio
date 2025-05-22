@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Schedule from '@/components/Schedule';
 import { NavbarContainer } from '@/components/Navbar';
+import Modal from '@/components/Modal/Modal';
 import { spaces } from '@/data/spaces';
 import type { Space } from '@/types';
 import './Schedules.scss';
@@ -12,7 +13,21 @@ import './Schedules.scss';
  */
 const Schedules: React.FC = () => {
   const [selectedSpace, setSelectedSpace] = useState<Space>(spaces[0]);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const wppMessage = encodeURIComponent(`Hola Tercer Espacio! Me gustaría reservar un horario en el ${selectedSpace.name}`);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleReserve = () => {
+    window.open(`https://wa.me/+5493518119701?text=${wppMessage}`, '_blank');
+    handleCloseModal();
+  };
 
   return (
     <NavbarContainer title="Disponibilidad Horaria">
@@ -29,14 +44,12 @@ const Schedules: React.FC = () => {
               </button>
             ))}
           </div>
-          <a
-            href={`https://wa.me/+5493518119701?text=${wppMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={handleOpenModal}
             className="schedules__whatsapp-button"
           >
             Hacé tu reserva
-          </a>
+          </button>
         </div>
         <Schedule
           spaceNumber={selectedSpace.id}
@@ -45,6 +58,35 @@ const Schedules: React.FC = () => {
           calendarColor={selectedSpace.calendarColor}
         />
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Reservar espacio"
+      >
+        <div className="reservation-form">
+          <p className="reservation-form__description">
+            ¿Te gustaría reservar el espacio {selectedSpace.description}?
+          </p>
+          <p className="reservation-form__info">
+            Para continuar con tu reserva, serás redirigido a WhatsApp donde podrás coordinar los detalles con nuestro equipo.
+          </p>
+          <div className="reservation-form__buttons">
+            <button
+              className="reservation-form__button reservation-form__button--cancel"
+              onClick={handleCloseModal}
+            >
+              Cancelar
+            </button>
+            <button
+              className="reservation-form__button reservation-form__button--confirm"
+              onClick={handleReserve}
+            >
+              Continuar en WhatsApp
+            </button>
+          </div>
+        </div>
+      </Modal>
     </NavbarContainer>
   );
 };

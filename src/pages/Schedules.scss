@@ -81,4 +81,54 @@
       border: 2px solid $bg-darker;
     }
   }
+}
+
+.reservation-form {
+  &__description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  &__info {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &--cancel {
+      background-color: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+
+      &:hover {
+        background-color: var(--color-background-hover);
+      }
+    }
+
+    &--confirm {
+      background-color: var(--color-primary);
+      border: none;
+      color: white;
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
+    }
+  }
 } 
