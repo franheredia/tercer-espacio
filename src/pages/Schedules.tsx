@@ -3,6 +3,7 @@ import Schedule from '@/components/Schedule';
 import { NavbarContainer } from '@/components/Navbar';
 import Modal from '@/components/Modal/Modal';
 import RadioButton from '@/components/Atoms/Button/RadioButton';
+import WhatsAppButton from '@/components/Atoms/Button/WhatsAppButton';
 import { spaces } from '@/data/spaces';
 import type { Space } from '@/types';
 import './Schedules.scss';
@@ -15,7 +16,7 @@ import './Schedules.scss';
 const Schedules: React.FC = () => {
   const [selectedSpace, setSelectedSpace] = useState<Space>(spaces[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const wppMessage = encodeURIComponent(`Hola Tercer Espacio! Me gustaría reservar un horario en el ${selectedSpace.name}`);
+  const wppMessage = `Hola Tercer Espacio! Me gustaría reservar un horario en el ${selectedSpace.name}`;
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -26,7 +27,6 @@ const Schedules: React.FC = () => {
   };
 
   const handleReserve = () => {
-    window.open(`https://wa.me/+5493518119701?text=${wppMessage}`, '_blank');
     handleCloseModal();
   };
 
@@ -48,12 +48,11 @@ const Schedules: React.FC = () => {
               />
             ))}
           </div>
-          <button
-            onClick={handleOpenModal}
+          <WhatsAppButton
+            message={wppMessage}
+            label="Hacé tu reserva"
             className="schedules__whatsapp-button"
-          >
-            Hacé tu reserva
-          </button>
+          />
         </div>
         <Schedule
           spaceNumber={selectedSpace.id}
@@ -82,12 +81,11 @@ const Schedules: React.FC = () => {
             >
               Cancelar
             </button>
-            <button
+            <WhatsAppButton
+              message={wppMessage}
+              label="Continuar en WhatsApp"
               className="reservation-form__button reservation-form__button--confirm"
-              onClick={handleReserve}
-            >
-              Continuar en WhatsApp
-            </button>
+            />
           </div>
         </div>
       </Modal>

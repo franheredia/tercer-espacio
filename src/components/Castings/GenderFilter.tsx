@@ -3,6 +3,7 @@ import type { JSX } from 'react';
 import './GenderFilter.scss';
 import type { Gender } from '@/types';
 import RadioButton from '@/components/Atoms/Button/RadioButton';
+import WhatsAppButton from '@/components/Atoms/Button/WhatsAppButton';
 
 /**
  * Props para el componente GenderFilter
@@ -29,9 +30,16 @@ const GenderFilter: React.FC<GenderFilterProps> = ({ selectedGender, onGenderCha
     { id: 'nonbinary', label: 'Roles no binarios' }
   ];
 
-  const wppMessage = encodeURIComponent(
-    `Hola Tercer Espacio! Les mando un casting para sumar a su página:\n_(y soy consciente de que sólo se publican castings que paguen al menos viáticos)_\n*Título de la propuesta:* \n*Fisic to rol:* (opcional)\n*Descripción de la propuesta:*\n*Teléfono de contacto:*\n*Info necesaria para aplicar:* Fotos de cara y cuerpo completo\n*Link con más información:* (opcional)\n*Remuneración:* Cubre viáticos y remuneración\n*Fecha de vencimiento de la publicación:* `
-  );
+  const wppMessage = `Hola Tercer Espacio! Les mando un casting para sumar a su página:
+_(y soy consciente de que sólo se publican castings que paguen al menos viáticos)_
+*Título de la propuesta:* 
+*Fisic to rol:* (opcional)
+*Descripción de la propuesta:*
+*Teléfono de contacto:*
+*Info necesaria para aplicar:* Fotos de cara y cuerpo completo
+*Link con más información:* (opcional)
+*Remuneración:* Cubre viáticos y remuneración
+*Fecha de vencimiento de la publicación:* `;
 
   return (
     <div className="gender-filter">
@@ -50,14 +58,11 @@ const GenderFilter: React.FC<GenderFilterProps> = ({ selectedGender, onGenderCha
             />
           ))}
         </div>
-        <a
+        <WhatsAppButton
+          message={wppMessage}
+          label="Agregá un casting"
           className="gender-filter__whatsapp-button"
-          href={`https://wa.me/+5493518119701?text=${wppMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Agregá un casting
-        </a>
+        />
       </div>
     </div>
   );

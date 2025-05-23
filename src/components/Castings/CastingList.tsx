@@ -3,7 +3,7 @@ import type { Casting, Gender } from '@/types';
 import GenderFilter from './GenderFilter';
 import './CastingList.scss';
 import { isAfter, endOfYesterday } from 'date-fns';
-
+import WhatsAppButton from '@/components/Atoms/Button/WhatsAppButton';
 interface CastingListProps {
   castings: Casting[];
 }
@@ -42,20 +42,18 @@ const CastingList: React.FC<CastingListProps> = ({ castings }) => {
                     href={casting.infoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="casting-buttons__btn"
                   >
                     Más info
                   </a>
                 )}
                 {casting.phone && (
-                  <a
-                    title="Chatear con la persona encargada por WhatsApp"
-                    href={`https://wa.me/${casting.phone}?text=${wppMessage}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <WhatsAppButton
+                    message={wppMessage}
+                    label="WhatsApp"
+                    phoneNumber={casting.phone}
                     className="wpp-btn"
-                  >
-                    WhatsApp
-                  </a>
+                  />
                 )}
               </div>
             </div>
