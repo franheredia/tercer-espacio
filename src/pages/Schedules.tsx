@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Schedule from '@/components/Schedule';
 import { NavbarContainer } from '@/components/Navbar';
 import Modal from '@/components/Modal/Modal';
+import RadioButton from '@/components/Atoms/Button/RadioButton';
 import { spaces } from '@/data/spaces';
 import type { Space } from '@/types';
 import './Schedules.scss';
@@ -13,7 +14,7 @@ import './Schedules.scss';
  */
 const Schedules: React.FC = () => {
   const [selectedSpace, setSelectedSpace] = useState<Space>(spaces[0]);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const wppMessage = encodeURIComponent(`Hola Tercer Espacio! Me gustaría reservar un horario en el ${selectedSpace.name}`);
 
   const handleOpenModal = () => {
@@ -35,13 +36,16 @@ const Schedules: React.FC = () => {
         <div className="schedules__selector">
           <div className="schedules__buttons">
             {spaces.map((space) => (
-              <button
+              <RadioButton
                 key={space.id}
-                className={`schedules__button ${selectedSpace.id === space.id ? 'schedules__button--active' : ''}`}
-                onClick={() => setSelectedSpace(space)}
-              >
-                {space.description}
-              </button>
+                id={space.id}
+                name="space-selector"
+                value={space.id}
+                label={space.description}
+                checked={selectedSpace.id === space.id}
+                onChange={(value) => setSelectedSpace(spaces.find(s => s.id === value) || spaces[0])}
+                className="schedules__button"
+              />
             ))}
           </div>
           <button

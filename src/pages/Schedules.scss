@@ -17,24 +17,6 @@
     justify-content: center;
   }
 
-  &__button {
-    font-weight: $font-weight-bold;
-    padding: $spacing-small $spacing-medium;
-    border: 2px solid $bg-darker;
-    background-color: $primary;
-    color: $text-primary;
-    border-radius: $border-radius-small;
-    font-family: $font-main;
-    font-size: $font-size-base;
-    cursor: pointer;
-    transition: $transition-default;
-
-    &:hover, &--active {
-      background-color: $primary-dark;
-      color: $text-inverse;
-    }
-  }
-
   &__whatsapp-button {
     align-content: center;
     font-weight: $font-weight-bold;
@@ -52,6 +34,7 @@
       background-color: $accent-positive-dark;
       color: $text-inverse;
       border-color: $accent-positive-dark;
+      cursor: pointer;
     }
   }
 }

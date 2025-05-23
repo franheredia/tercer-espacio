@@ -2,6 +2,7 @@ import React from 'react';
 import type { JSX } from 'react';
 import './GenderFilter.scss';
 import type { Gender } from '@/types';
+import RadioButton from '@/components/Atoms/Button/RadioButton';
 
 /**
  * Props para el componente GenderFilter
@@ -37,23 +38,16 @@ const GenderFilter: React.FC<GenderFilterProps> = ({ selectedGender, onGenderCha
       <div className="gender-filter__container">
         <div className="gender-filter__group">
           {genderOptions.map(option => (
-            <div key={option.id} className="gender-filter__option">
-              <input
-                type="radio"
-                id={option.id}
-                name="role-filter"
-                value={option.id}
-                checked={selectedGender === option.id}
-                onChange={(e) => onGenderChange(e.target.value as Gender)}
-                className="gender-filter__input"
-              />
-              <label
-                htmlFor={option.id}
-                className="gender-filter__label"
-              >
-                {option.label}
-              </label>
-            </div>
+            <RadioButton
+              key={option.id}
+              id={option.id}
+              name="role-filter"
+              value={option.id}
+              label={option.label}
+              checked={selectedGender === option.id}
+              onChange={(value) => onGenderChange(value as Gender)}
+              className="gender-filter__option"
+            />
           ))}
         </div>
         <a
