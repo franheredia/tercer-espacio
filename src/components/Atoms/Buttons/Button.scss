@@ -6,7 +6,7 @@
   font-family: $font-main;
   font-size: $font-size-base;
   transition: $transition-default;
-  border: 2px solid transparent;
+  border: 2px solid $bg-darker;
   border-radius: $border-radius-small;
   cursor: pointer;
   text-align: center;
@@ -15,7 +15,6 @@
   &--primary {
     background-color: $primary;
     color: $text-primary;
-    border-color: $bg-darker;
 
     &:hover:not(:disabled) {
       background-color: $primary-dark;
@@ -25,20 +24,19 @@
   }
 
   &--secondary {
-    background-color: transparent;
+    background-color: $bg-base;
     color: $text-primary;
-    border-color: $bg-darker;
 
     &:hover:not(:disabled) {
       background-color: $bg-darker;
       color: $text-inverse;
+      border-color: $bg-darker;
     }
   }
 
   &--success {
     background-color: $accent-positive;
     color: $text-primary;
-    border-color: $accent-positive;
 
     &:hover:not(:disabled) {
       background-color: $accent-positive-dark;
@@ -50,7 +48,6 @@
   &--danger {
     background-color: $accent-negative;
     color: $text-inverse;
-    border-color: $accent-negative;
 
     &:hover:not(:disabled) {
       background-color: $accent-negative-dark;
