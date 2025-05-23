@@ -25,7 +25,7 @@
 
   &--secondary {
     background-color: $bg-base;
-    color: $text-primary;
+    color: $text-inverse;
 
     &:hover:not(:disabled) {
       background-color: $bg-darker;
