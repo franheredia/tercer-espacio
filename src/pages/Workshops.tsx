@@ -1,6 +1,6 @@
 import React from 'react';
-import WorkshopList from '@/components/Workshops/WorkshopList';
-import { NavbarContainer } from '@/components/Navbar';
+import { WorkshopList } from '@/components/organisms/Workshops';
+import { NavbarContainer } from '@/components/organisms/Navbar';
 import { workshops } from '@/data/workshops';
 import './Workshops.scss';
 

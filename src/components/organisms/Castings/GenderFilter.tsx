@@ -2,8 +2,8 @@ import React from 'react';
 import type { JSX } from 'react';
 import './GenderFilter.scss';
 import type { Gender } from '@/types';
-import { RadioButton } from '@/components/Atoms/Buttons';
-import WhatsAppButton from '@/components/Molecules/WhatsAppButton';
+import { RadioButton } from '@/components/atoms/Buttons';
+import WhatsAppButton from '@/components/molecules/WhatsAppButton';
 
 /**
  * Props para el componente GenderFilter
