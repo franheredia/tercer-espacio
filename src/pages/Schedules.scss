@@ -44,43 +44,37 @@
   }
 
   &__info {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 2rem;
+    font-size: $font-size-base;
+    text-align: center;
+    color: $text-primary;
     line-height: 1.5;
+    margin-bottom: $spacing-large;
+
+    &--accent {
+      background-color: $bg-contrast;
+      color: $text-inverse;
+      padding: $spacing-medium $spacing-small;
+      border-radius: $border-radius-small;
+      margin-bottom: $spacing-medium;
+    
+      b {
+        color: $text-secondary;
+      }
+      br {
+        margin-bottom: $spacing-small;
+      }	
+    }
   }
 
   &__buttons {
     display: flex;
-    gap: 1rem;
     justify-content: flex-end;
+    gap: $spacing-large;
   }
 
-  &__button {
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    &--cancel {
-      background-color: transparent;
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-
-      &:hover {
-        background-color: var(--color-background-hover);
-      }
-    }
-
-    &--confirm {
-      background-color: var(--color-primary);
-      border: none;
-      color: white;
-
-      &:hover {
-        background-color: var(--color-primary-dark);
-      }
+  @media (max-width: $breakpoint-mobile) {
+    &__buttons {
+      justify-content: center;
     }
   }
 } 

@@ -22,13 +22,14 @@
   &__container {
     position: relative;
     background-color: $bg-accent;
-    border-radius: 8px;
-    padding: 2rem;
+    border-radius: $border-radius-small;
+    border: .5px solid $bg-darker;
+    padding: $spacing-extra-large;
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 4px 6px $shadow-hard;
+    box-shadow: 0 1px 10px $shadow-hard;
     z-index: 1001;
   }
 
@@ -36,32 +37,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-large;
   }
 
   &__title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-black;
     color: $text-primary;
-    margin: 0;
   }
 
   &__close-button {
     background: none;
     border: none;
-    font-size: 1.5rem;
-    color: $text-primary;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-black;
+    color: $bg-dark;
     cursor: pointer;
     padding: 0.5rem;
     line-height: 1;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $primary;
+      color: $text-inverse;
     }
   }
 
   &__content {
     color: $text-primary;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    &__container {
+      width: 93%;
+      padding: $spacing-extra-large $spacing-large;
+    }
   }
 } 

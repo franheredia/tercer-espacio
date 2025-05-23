@@ -31,7 +31,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   phoneNumber = '+5493518119701'
 }): JSX.Element => {
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}`;
 
   return (
     <Button

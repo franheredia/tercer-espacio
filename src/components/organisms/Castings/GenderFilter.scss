@@ -65,6 +65,10 @@
         margin-bottom: $spacing-medium;
         flex-direction: column;
       }
+
+      &__whatsapp-button {
+        margin: 0 $spacing-medium;
+      }
     }
   }
 }
