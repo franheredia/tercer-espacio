@@ -1,5 +1,6 @@
 import React from 'react';
 import type { JSX } from 'react';
+import { Button } from '@/components/Atoms/Buttons';
 import './WhatsAppButton.scss';
 
 /**
@@ -18,7 +19,7 @@ interface WhatsAppButtonProps {
 }
 
 /**
- * Componente atómico de botón de WhatsApp
+ * Componente molecular de botón de WhatsApp
  * @component
  * @param {WhatsAppButtonProps} props - Props del componente
  * @returns {JSX.Element} Componente WhatsAppButton
@@ -33,14 +34,16 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
-    <a
+    <Button
       href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      label={label}
+      variant="success"
       className={`whatsapp-button ${className}`}
-    >
-      {label}
-    </a>
+      linkProps={{
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      }}
+    />
   );
 };
 
