@@ -49,6 +49,7 @@ const Schedules: React.FC = () => {
             label="Hacé tu reserva"
             variant="success"
             onClick={handleOpenModal}
+            className="schedules__modal-button"
           />
         </div>
         <Schedule
