@@ -123,7 +123,7 @@ $font-weight-black: 700;
 // 📐 Spacing
 // ===============================
 $spacing-unit: 8px;
-$spacing-extra-small: $spacing-unit / 2;
+$spacing-extra-small: calc($spacing-unit / 2);
 $spacing-small: $spacing-unit;
-$spacing-medium: $spacing-unit * 2;
-$spacing-large: $spacing-unit * 3;
+$spacing-medium: calc($spacing-unit * 2);
+$spacing-large: calc($spacing-unit * 3);

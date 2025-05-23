@@ -1,4 +1,4 @@
-@import '@/styles/variables';
+@use '@/styles/variables' as *;
 
 .radio-button {
   position: relative;
