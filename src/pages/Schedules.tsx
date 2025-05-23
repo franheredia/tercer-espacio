@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Schedule from '@/components/Schedule';
 import { NavbarContainer } from '@/components/Navbar';
-import Modal from '@/components/Modal/Modal';
+import Modal from '@/components/Molecules/Modal';
 import { RadioButton } from '@/components/Atoms/Buttons';
 import WhatsAppButton from '@/components/Molecules/WhatsAppButton';
 import { spaces } from '@/data/spaces';
