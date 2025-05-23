@@ -25,7 +25,7 @@ npm run dev
 - **Frontend**: React 18.2.0
 - **Lenguaje**: TypeScript 5.0.0
 - **Bundler**: Vite 4.0.0
-- **Estilos**: SCSS con BEM
+- **Estilos**: SCSS con BEM y Atomic Design
 - **Linting**: ESLint + Prettier
 - **Control de Versiones**: Git con Conventional Commits
 
@@ -36,7 +36,10 @@ npm run dev
 ├── src/                # Código fuente
 │   ├── assets/         # Archivos estáticos
 │   ├── components/     # Componentes reutilizables
-│   ├── pages/         # Páginas/rutas
+│   │   ├── atoms/     # Componentes atómicos
+│   │   ├── molecules/ # Componentes moleculares
+│   │   └── organisms/ # Componentes orgánicos
+│   └── pages/         # Páginas
 │   ├── hooks/         # Custom hooks
 │   ├── services/      # Servicios y APIs
 │   ├── utils/         # Funciones utilitarias
@@ -49,6 +52,15 @@ npm run dev
 
 ## 📝 Convenciones de Código
 
+### Atomic Design
+El proyecto sigue la metodología Atomic Design para la organización de componentes:
+
+- **Atoms**: Componentes básicos (botones, inputs, etiquetas)
+- **Molecules**: Combinaciones de átomos o componentes más complejos que solo se utilizan implementando Atoms (formularios, cards)
+- **Organisms**: Secciones complejas (headers, footers)
+
+- **Pages**: Implementaciones específicas de otros componentes formando una vista para el usuario. (De momento nos estamos salteando los templates porque hoy seria overengineering)
+
 ### Nomenclatura
 - **Directorios**: kebab-case
 - **Componentes**: PascalCase
@@ -58,7 +70,18 @@ npm run dev
 - **Hooks**: camelCase
 
 ### Componentes
+Cada carpeta de componentes debe incluir:
+- Un archivo `index.ts` para exportaciones
+- El componente principal
+- Su archivo de estilos
+- Tests (si aplica)
+
 ```typescript
+// index.ts
+export { default as ComponentName } from './ComponentName';
+export * from './ComponentName';
+
+// ComponentName.tsx
 import React from 'react';
 import './ComponentName.scss';
 
@@ -75,18 +98,38 @@ export const ComponentName: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
 export default ComponentName;
 ```
 
-### Estilos (BEM)
+### Estilos (BEM + Variables)
 ```scss
+@use './styles/variables' as *;
+
 .component {
+  color: $text-primary;
+  background: $bg-base;
+  
   &__element {
-    // estilos
+    // estilos usando variables
   }
   
   &--modifier {
-    // estilos
+    // estilos usando variables
   }
 }
 ```
+
+## 🎨 Sistema de Diseño
+
+### Variables SCSS
+Todas las propiedades de estilo deben usar las variables definidas en `_variables.scss`:
+
+- Colores
+- Tipografía
+- Espaciado
+- Breakpoints
+- Bordes
+- Sombras
+- Transiciones
+
+Ver `src/styles/_variables.scss` para la lista completa de variables disponibles.
 
 ## 🔧 Scripts Disponibles
 
@@ -97,23 +140,6 @@ export default ComponentName;
 - `npm run format`: Formateo del código
 - `npm run test`: Ejecuta tests
 - `npm run deploy`: Despliegue en GitHub Pages
-
-## 🎨 Sistema de Diseño
-
-### Variables SCSS
-```scss
-// Colores
-$color-primary: #EC7198;
-$color-background: #2552F2;
-
-// Breakpoints
-$breakpoint-mobile: 480px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-
-// Espaciado
-$spacing-unit: 8px;
-```
 
 ## 🧪 Testing (TO DO)
 

@@ -2,6 +2,18 @@
 
 format: cursorrules/v1
 
+# Atomic Design
+atomic_design:
+  structure:
+    atoms: Componentes básicos (botones, inputs, etiquetas)
+    molecules: Combinaciones de átomos (formularios, cards)
+    organisms: Secciones complejas (headers, footers)
+    pages: Implementaciones específicas de otros componentes formando una vista para el usuario. (De momento nos estamos salteando los templates porque hoy seria overengineering)
+  rules:
+    - use-index-files
+    - follow-hierarchy
+    - maintain-isolation
+
 # Reglas de Nomenclatura
 naming:
   directories: kebab-case
@@ -21,15 +33,24 @@ structure:
     - main.tsx
     - assets/
     - components/
+      - atoms/
+      - molecules/
+      - organisms/
+      - templates/
+    - pages/
     - constants/
     - data/
-    - pages/
     - styles/
     - types/
 
 # Patrones de Componentes
 patterns:
   component:
+    required_files:
+      - index.ts
+      - ComponentName.tsx
+      - ComponentName.scss
+      - ComponentName.test.tsx
     template: |
       import React from 'react';
       import './ComponentName.scss';
@@ -45,19 +66,31 @@ patterns:
       };
       
       export default ComponentName;
+    index_template: |
+      export { default as ComponentName } from './ComponentName';
+      export * from './ComponentName';
 
 # Reglas de Estilo
 style:
   scss:
     pattern: BEM
+    variables: required
+      required: true
+      file: src/styles/__variables.scss
     order:
       - positioning
       - box-model
       - typography
       - visual
       - misc
-    variables: true
     nesting: max-depth-3
+    rules:
+      - use-variables
+      - no-hardcoded-values
+      - follow-bem
+      - no-important
+      - limit-nesting:
+          max-depth: 2
 
 # TypeScript
 typescript:
