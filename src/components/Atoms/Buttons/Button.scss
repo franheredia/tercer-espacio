@@ -1,0 +1,92 @@
+@use '@/styles/variables' as *;
+
+.button {
+  display: inline-block;
+  align-content: center;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  font-family: $font-main;
+  font-size: $font-size-base;
+  transition: $transition-default;
+  border: 2px solid transparent;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  text-align: center;
+
+  // Variantes
+  &--primary {
+    background-color: $primary;
+    color: $text-primary;
+    border-color: $bg-darker;
+
+    &:hover:not(:disabled) {
+      background-color: $primary-dark;
+      color: $text-inverse;
+      border-color: $primary-dark;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $text-primary;
+    border-color: $bg-darker;
+
+    &:hover:not(:disabled) {
+      background-color: $bg-darker;
+      color: $text-inverse;
+    }
+  }
+
+  &--success {
+    background-color: $accent-positive;
+    color: $text-primary;
+    border-color: $accent-positive;
+
+    &:hover:not(:disabled) {
+      background-color: $accent-positive-dark;
+      color: $text-inverse;
+      border-color: $accent-positive-dark;
+    }
+  }
+
+  &--danger {
+    background-color: $accent-negative;
+    color: $text-inverse;
+    border-color: $accent-negative;
+
+    &:hover:not(:disabled) {
+      background-color: $accent-negative-dark;
+      border-color: $accent-negative-dark;
+    }
+  }
+
+  // Tamaños
+  &--small {
+    padding: $spacing-extra-small $spacing-small;
+    font-size: $font-size-sm;
+  }
+
+  &--medium {
+    padding: $spacing-small $spacing-medium;
+    font-size: $font-size-base;
+  }
+
+  &--large {
+    padding: $spacing-medium $spacing-large;
+    font-size: $font-size-lg;
+  }
+
+  // Estado deshabilitado
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Responsive
+  @media (max-width: $breakpoint-mobile) {
+    &--medium {
+      padding: $spacing-small $spacing-medium;
+      margin: 0 30px;
+    }
+  }
+} 

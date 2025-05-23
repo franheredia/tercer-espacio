@@ -28,7 +28,7 @@
       margin: $spacing-medium auto 0;
       justify-content: space-around;
 
-      a {
+      &.__btn {
         padding: $spacing-small $spacing-medium;
         border-radius: $border-radius-small;
         text-decoration: none;
@@ -41,16 +41,6 @@
 
         &:hover {
           background-color: $primary-dark;
-        }
-
-        &.wpp-btn {
-          background-color: $accent-positive;
-          color: $text-primary;
-
-          &:hover {
-            background-color: $accent-positive-dark;
-            color: $text-inverse;
-          }
         }
       }
     }

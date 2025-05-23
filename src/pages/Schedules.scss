@@ -1,7 +1,6 @@
 @use '@/styles/variables' as *;
 
 .schedules {
-
   &__selector {
     display: flex;
     width: 100%;
@@ -15,44 +14,6 @@
     gap: $spacing-small;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  &__button {
-    font-weight: $font-weight-bold;
-    padding: $spacing-small $spacing-medium;
-    border: 2px solid $bg-darker;
-    background-color: $primary;
-    color: $text-primary;
-    border-radius: $border-radius-small;
-    font-family: $font-main;
-    font-size: $font-size-base;
-    cursor: pointer;
-    transition: $transition-default;
-
-    &:hover, &--active {
-      background-color: $primary-dark;
-      color: $text-inverse;
-    }
-  }
-
-  &__whatsapp-button {
-    align-content: center;
-    font-weight: $font-weight-bold;
-    background-color: $accent-positive;
-    color: $text-primary;
-    padding: $spacing-small $spacing-medium;
-    border-radius: $border-radius-small;
-    text-decoration: none;
-    font-family: $font-main;
-    font-size: $font-size-base;
-    transition: $transition-default;
-    border: 2px solid $accent-positive;
-
-    &:hover {
-      background-color: $accent-positive-dark;
-      color: $text-inverse;
-      border-color: $accent-positive-dark;
-    }
   }
 }
 
@@ -73,12 +34,55 @@
     &__button {
       font-size: $font-size-sm;
     }
+  }
+}
 
-    &__whatsapp-button {
-      font-size: $font-size-sm;
-      padding: $spacing-small;
-      margin: 0 30px;
-      border: 2px solid $bg-darker;
+.reservation-form {
+  &__description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  &__info {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &--cancel {
+      background-color: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+
+      &:hover {
+        background-color: var(--color-background-hover);
+      }
+    }
+
+    &--confirm {
+      background-color: var(--color-primary);
+      border: none;
+      color: white;
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
     }
   }
 } 
