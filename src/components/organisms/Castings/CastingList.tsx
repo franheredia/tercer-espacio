@@ -3,7 +3,7 @@ import type { Casting, Gender } from '@/types';
 import GenderFilter from './GenderFilter';
 import './CastingList.scss';
 import { isAfter, endOfYesterday } from 'date-fns';
-import WhatsAppButton from '@/components/Molecules/WhatsAppButton';
+import WhatsAppButton from '@/components/molecules/WhatsAppButton';
 interface CastingListProps {
   castings: Casting[];
 }

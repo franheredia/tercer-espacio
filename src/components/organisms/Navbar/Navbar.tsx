@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Arrow } from '@/components/Icons';
+import { Arrow } from '@/components/atoms/Icons';
 import './Navbar.scss';
 
 /**

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { JSX } from 'react';
-import { NavbarContainer } from '@/components/Navbar';
-import CastingList from '@/components/Castings/CastingList';
+import { NavbarContainer } from '@/components/organisms/Navbar';
+import { CastingList } from '@/components/organisms/Castings';
 import { completeCastings } from '@/data/castings';
 import './Castings.scss';
 

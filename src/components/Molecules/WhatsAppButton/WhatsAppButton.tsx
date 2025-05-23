@@ -1,6 +1,6 @@
 import React from 'react';
 import type { JSX } from 'react';
-import { Button } from '@/components/Atoms/Buttons';
+import { Button } from '@/components/atoms/Buttons';
 import './WhatsAppButton.scss';
 
 /**

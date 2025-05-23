@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Schedule from '@/components/Schedule';
-import { NavbarContainer } from '@/components/Navbar';
-import Modal from '@/components/Molecules/Modal';
-import { RadioButton } from '@/components/Atoms/Buttons';
-import WhatsAppButton from '@/components/Molecules/WhatsAppButton';
+import Schedule from '@/components/organisms/Schedule';
+import { NavbarContainer } from '@/components/organisms/Navbar';
+import Modal from '@/components/molecules/Modal';
+import { RadioButton } from '@/components/atoms/Buttons';
+import WhatsAppButton from '@/components/molecules/WhatsAppButton';
 import { spaces } from '@/data/spaces';
 import type { Space } from '@/types';
 import './Schedules.scss';
