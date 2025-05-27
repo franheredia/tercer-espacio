@@ -1,0 +1,15 @@
+.accent-block {
+    background-color: $bg-contrast;
+    color: $text-inverse;
+    padding: $spacing-medium $spacing-small;
+    border-radius: $border-radius-small;
+    margin-bottom: $spacing-medium;
+
+    b {
+        color: $text-secondary;
+    }
+
+    br {
+        margin-bottom: $spacing-small;
+    }
+}

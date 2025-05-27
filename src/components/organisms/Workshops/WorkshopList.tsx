@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Workshop } from '@/types';
+import { AccentBlock } from '@/components/atoms/AccentBlock';
 import './WorkshopList.scss';
 
 interface WorkshopListProps {
@@ -52,17 +53,15 @@ const WorkshopList: React.FC<WorkshopListProps> = ({ workshops }) => {
               <div className="workshop-content">
                 <h2>{workshop.title}</h2>
                 <p className="description">{workshop.description}</p>
-                <div className="workshop-details">
-                  <p className="schedule">
-                    <strong>Horario:</strong> {workshop.schedule}
+                <AccentBlock>
+                  <p>
+                    <b>Horario:</b> {workshop.schedule}
+                    <br />
+                    <b>Por:</b> {workshop.instructor}
+                    <br />
+                    <b>Modalidad:</b> {workshop.modality}
                   </p>
-                  <p className="instructor">
-                    <strong>Por:</strong> {workshop.instructor}
-                  </p>
-                  <p className="modality">
-                    <strong>Modalidad:</strong> {workshop.modality}
-                  </p>
-                </div>
+                </AccentBlock>
 
                 <div className="workshop-buttons">
                   {workshop.contact.infoUrl && (

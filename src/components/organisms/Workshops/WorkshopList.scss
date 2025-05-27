@@ -88,26 +88,8 @@
           opacity: $opacity-strong;
         }
 
-        .workshop-details {
-          background-color: $bg-contrast;
-          padding: $spacing-medium;
-          border-radius: $border-radius-small;
-          margin-bottom: $spacing-medium;
-
-          p {
-            color: $text-inverse;
-            margin-bottom: $spacing-small;
-            font-size: $font-size-sm;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-
-            strong {
-              color: $primary-light;
-              font-weight: $font-weight-bold;
-            }
-          }
+        .accent-block {
+          font-size: $font-size-sm;
         }
 
         .workshop-buttons {

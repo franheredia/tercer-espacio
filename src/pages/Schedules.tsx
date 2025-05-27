@@ -5,6 +5,7 @@ import Modal from '@/components/molecules/Modal';
 import { RadioButton } from '@/components/atoms/Buttons';
 import WhatsAppButton from '@/components/molecules/WhatsAppButton';
 import { Button } from '@/components/atoms/Buttons';
+import { AccentBlock } from '@/components/atoms/AccentBlock';
 import { spaces } from '@/data/spaces';
 import type { Space } from '@/types';
 import './Schedules.scss';
@@ -66,17 +67,17 @@ const Schedules: React.FC = () => {
         title="Reservá tu espacio"
       >
         <div className="reservation-form">
-          <p className="reservation-form__description">
+          <p>
             Tu reserva en tres pasos!
           </p>
-          <p className="reservation-form__info--accent">
+          <AccentBlock className="reservation-form__accent-block">
             <b>1.</b> Verificá que el espacio esté disponible en el calendario.
             <br />
             <b>2.</b> Pedinos el presupuesto para ese espacio, fecha y horario.
             <br />
             <b>3.</b> Transferí el 30% del total para confirmar la reserva.
-          </p>
-          <p className="reservation-form__info">
+          </AccentBlock>
+          <p>
             Y listo! Te esperamos en el espacio 🤍
           </p>
           <div className="reservation-form__buttons">
