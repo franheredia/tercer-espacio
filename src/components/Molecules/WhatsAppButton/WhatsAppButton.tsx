@@ -14,6 +14,8 @@ interface WhatsAppButtonProps {
   label: string;
   /** Clase CSS adicional opcional */
   className?: string;
+  /** Tamaño del botón */
+  buttonSize?: 'small' | 'medium' | 'large';
   /** Número de teléfono de WhatsApp */
   phoneNumber?: string;
 }
@@ -28,6 +30,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   message,
   label,
   className = '',
+  buttonSize = 'medium',
   phoneNumber = '+5493518119701'
 }): JSX.Element => {
   const encodedMessage = encodeURIComponent(message);
@@ -37,6 +40,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
     <Button
       href={whatsappUrl}
       label={label}
+      size={buttonSize}
       variant="success"
       className={`whatsapp-button ${className}`}
       linkProps={{
