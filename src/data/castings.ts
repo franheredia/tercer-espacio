@@ -17,7 +17,7 @@ export const completeCastings: Casting[] = [
     {
         title: "Rol Fem - Corto Universitaro",
         gender: "female",
-        fisic: "Que aparente entre 20 y 25 años.",
+        fisic: "Aparentar entre 20 y 25 años.",
         description: "Casting virtual hasta el 31 de mayo. Remuneración y viáticos.",
         requiredInfo: "foto de rostro y de cuerpo completo.",
         infoUrl: "",
@@ -29,7 +29,7 @@ export const completeCastings: Casting[] = [
     {
         title: "Rol Infantil Fem - Corto Universitaro",
         gender: "female",
-        fisic: "Que aparente entre 10 años.",
+        fisic: "Aparentar tener 10 años.",
         description: "Casting virtual hasta el 31 de mayo. Remuneración y viáticos.",
         requiredInfo: "foto de rostro y de cuerpo completo.",
         infoUrl: "",
