@@ -53,14 +53,10 @@ const WorkshopList: React.FC<WorkshopListProps> = ({ workshops }) => {
               <div className="workshop-content">
                 <h2>{workshop.title}</h2>
                 <p className="description">{workshop.description}</p>
-                <AccentBlock>
-                  <p>
-                    <b>Horario:</b> {workshop.schedule}
-                    <br />
-                    <b>Por:</b> {workshop.instructor}
-                    <br />
-                    <b>Modalidad:</b> {workshop.modality}
-                  </p>
+                <AccentBlock className='workshop-content__accent'>
+                  <p><b>Horario:</b> {workshop.schedule}</p>
+                  <p><b>Por:</b> {workshop.instructor}</p>
+                  <p><b>Modalidad:</b> {workshop.modality}</p>
                 </AccentBlock>
 
                 <div className="workshop-buttons">

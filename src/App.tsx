@@ -10,6 +10,7 @@ import Workshops from '@/pages/Workshops';
 import ScrollToTop from '@/components/molecules/ScrollToTop';
 import { linksSections } from '@/data/linksSection';
 import type { LinksSectionsProps } from '@/types';
+import { Toaster } from 'react-hot-toast';
 
 /**
  * Componente principal de la aplicación que maneja el enrutamiento y la estructura base
@@ -19,36 +20,39 @@ import type { LinksSectionsProps } from '@/types';
  */
 export const App: React.FC = (): JSX.Element => {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route 
-          path="/" 
-          element={
-            <div className="app">
-              <div className="app__container container">
-                <Profile />
-                {linksSections.map((section: LinksSectionsProps, index: number) => (
-                  <LinksSection key={`section-${index}`} section={section} />
-                ))}
-                <div className="app__footer">
-                  <p className="app__footer-text">
-                    Dirección: Humberto Primo 836 - Córdoba, Argentina
-                    <br />
-                    Alias: TERCER.ESPACIO
-                  </p>
+    <>
+      <Toaster position="top-center" toastOptions={{ duration: 1500 }} />
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="app">
+                <div className="app__container container">
+                  <Profile />
+                  {linksSections.map((section: LinksSectionsProps, index: number) => (
+                    <LinksSection key={`section-${index}`} section={section} />
+                  ))}
+                  <div className="app__footer">
+                    <p className="app__footer-text">
+                      Dirección: Humberto Primo 836 - Córdoba, Argentina
+                      <br />
+                      Alias: TERCER.ESPACIO
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          } 
-        />
-        <Route path="/horarios" element={<Schedules />} />
-        <Route path="/castings" element={<Castings />} />
-        <Route path="/talleres" element={<Workshops />} />
-        <Route path="/qr-pages/1" element={<Schedules />} />
-        <Route path="/qr-pages/2" element={<Workshops />} />
-      </Routes>
-    </Router>
+            }
+          />
+          <Route path="/horarios" element={<Schedules />} />
+          <Route path="/castings" element={<Castings />} />
+          <Route path="/talleres" element={<Workshops />} />
+          <Route path="/qr-pages/1" element={<Schedules />} />
+          <Route path="/qr-pages/2" element={<Workshops />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 

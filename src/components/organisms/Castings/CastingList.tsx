@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import type { Casting, Gender } from '@/types';
 import GenderFilter from './GenderFilter';
+import { Button } from '@/components/atoms/Buttons';
 import './CastingList.scss';
 import { isAfter, endOfYesterday } from 'date-fns';
-import WhatsAppButton from '@/components/molecules/WhatsAppButton';
+
 interface CastingListProps {
   castings: Casting[];
+  onTriggerCasting: (casting: Casting) => void;
 }
 
-const CastingList: React.FC<CastingListProps> = ({ castings }) => {
+const CastingList: React.FC<CastingListProps> = ({ castings, onTriggerCasting }) => {
   const isCastingActive = (endDate: Date) => isAfter(endDate, endOfYesterday());
 
   const [selectedGender, setSelectedGender] = useState<Gender>('any');
@@ -26,37 +28,35 @@ const CastingList: React.FC<CastingListProps> = ({ castings }) => {
       <GenderFilter selectedGender={selectedGender} onGenderChange={handleGenderChange} />
 
       {filteredCastings.length > 0 ? (
-        filteredCastings.map((casting, index) => {
-          const wppMessage = `Hola, ví en la página de Tercer Espacio que tienen un casting abierto para ${casting.title}! En breve te envío ${casting.requiredInfo}`;
-
-          return (
-            <div key={index} className="casting-card">
-              <h2>{casting.title}</h2>
-              <p>{casting.fisic}</p>
-              <p>{casting.description}</p>
-              <div className="casting-buttons">
-                {casting.infoUrl && (
-                  <a
-                    href={casting.infoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="casting-buttons__btn"
-                  >
-                    Más info
-                  </a>
-                )}
-                {casting.phone && (
-                  <WhatsAppButton
-                    message={wppMessage}
-                    label="WhatsApp"
-                    phoneNumber={casting.phone}
-                    className="wpp-btn"
-                  />
-                )}
-              </div>
+        filteredCastings.map((casting, index) => (
+          <div key={index} className="casting-card">
+            <h2>{casting.title}</h2>
+            <p>{casting.fisic}</p>
+            <p>{casting.description}</p>
+            <div className="casting-buttons">
+              {casting.infoUrl && (
+                <Button
+                  label="Más info"
+                  variant="secondary"
+                  href={casting.infoUrl}
+                  linkProps={{
+                    target: "_blank",
+                    rel: "noopener noreferrer"
+                  }}
+                  className="casting-buttons__btn"
+                />
+              )}
+              {casting.contact.phone && (
+                <Button
+                  label="Aplicar"
+                  variant="success"
+                  onClick={() => onTriggerCasting(casting)}
+                  className="casting-buttons__btn"
+                />
+              )}
             </div>
-          );
-        })
+          </div>
+        ))
       ) : (
         <div className="casting-card">
           <h2>No hay castings compatibles</h2>
