@@ -2,7 +2,7 @@
   &__container {
     // Positioning
     position: relative;
-    
+
     // Box Model
     width: 100%;
     max-width: $breakpoint-desktop;
@@ -12,13 +12,13 @@
     // Typography
     font-family: $font-main;
     color: $text-primary;
-    
+
     // Visual
     background-color: $bg-light;
     border-radius: $border-radius;
     box-shadow: 0 2px 4px $shadow-soft;
     transition: $transition-default;
-    
+
     @media (max-width: $breakpoint-mobile) {
       padding: $spacing-small;
     }
@@ -26,15 +26,58 @@
 }
 
 .casting-modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $spacing-large;
-  padding: $spacing-medium;
-
-  p {
-    text-align: center;
+  &__title {
     font-size: $font-size-lg;
-    color: $text-primary;
+    font-weight: $font-weight-black;
   }
-} 
+
+  &__required-info-title {
+    margin-top: $spacing-medium
+  }
+
+  &__required-info {
+    display: inline-block;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  &__accent {
+    padding-bottom: $spacing-large;
+
+    p {
+      margin-bottom: $spacing-small;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-extra-large;
+    margin-top: $spacing-medium;
+  }
+
+  &__copy-contact {
+    cursor: pointer;
+    text-decoration: underline;
+    max-width: max-content;
+    margin: 0 auto;
+
+    &:hover {
+      color: $accent-positive;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-sm;
+
+    &__title {
+      font-size: $font-size-base;
+    }
+
+    &__accent {
+      gap: $spacing-small;
+    }
+  }
+}

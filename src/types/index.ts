@@ -43,14 +43,19 @@ export interface Casting {
   fisic: string;
   /** Descripción detallada del papel */
   description: string;
-  /** Teléfono de contacto */
-  phone: string;
   /** Información adicional requerida */
   requiredInfo: string;
   /** URL con información detallada */
   infoUrl: string;
   /** Fecha de finalización de la convocatoria */
   endDate: Date;
+  /** Contacto de la convocatoria */
+  contact: {
+    /** Teléfono de contacto */
+    phone?: string;
+    /** Email de contacto */
+    email?: string;
+  };
 }
 
 export type Gender = 'any' | 'male' | 'female' | 'nonbinary';

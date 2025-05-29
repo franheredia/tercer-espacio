@@ -46,7 +46,7 @@ const CastingList: React.FC<CastingListProps> = ({ castings, onTriggerCasting })
                   className="casting-buttons__btn"
                 />
               )}
-              {casting.phone && (
+              {casting.contact.phone && (
                 <Button
                   label="Aplicar"
                   variant="success"
