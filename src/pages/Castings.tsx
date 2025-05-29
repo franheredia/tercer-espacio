@@ -62,7 +62,7 @@ const Castings: React.FC = (): JSX.Element => {
         {selectedCasting && (
           <div className="casting-modal-content">
             <AccentBlock className='casting-modal-content__accent'>
-              <p className="casting-modal-content__title"><b>~ {selectedCasting.title} ~</b></p>
+              <p className="casting-modal-content__title"><b>{selectedCasting.title}</b></p>
               <p>{selectedCasting.fisic}</p>
               <p>{selectedCasting.description}</p>
               <p className='casting-modal-content__required-info-title'><b>Para aplicar, tenés que enviar:</b></p>
