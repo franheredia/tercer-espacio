@@ -95,6 +95,17 @@ const Castings: React.FC = (): JSX.Element => {
                   message={buildCastingMessage(selectedCasting)}
                 />
               )}
+              {selectedCasting.infoUrl && (
+                <Button
+                  label="Más info"
+                  href={selectedCasting.infoUrl}
+                  variant="secondary"
+                  linkProps={{
+                    target: "_blank",
+                    rel: "noopener noreferrer"
+                  }}
+                />
+              )}
             </div>
           </div>
         )}
