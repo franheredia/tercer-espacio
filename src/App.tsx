@@ -21,7 +21,7 @@ import { Toaster } from 'react-hot-toast';
 export const App: React.FC = (): JSX.Element => {
   return (
     <>
-      <Toaster position="top-center" />
+      <Toaster position="top-center" toastOptions={{ duration: 1500 }} />
       <Router>
         <ScrollToTop />
         <Routes>

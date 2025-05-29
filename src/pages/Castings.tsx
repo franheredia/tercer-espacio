@@ -34,9 +34,18 @@ const Castings: React.FC = (): JSX.Element => {
     return `Hola, ví en la página de Tercer Espacio que tienen un casting abierto para ${casting.title}! Te envío ${casting.requiredInfo}`;
   };
 
-  const copyToClipboard = (text: string | undefined) => {
-    navigator.clipboard.writeText(text || '');
-    toast.success('¡Contacto copiado al portapapeles!');
+  const copyToClipboard = (e: React.MouseEvent<HTMLParagraphElement>) => {
+    const element = e.currentTarget;
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    const selection = window.getSelection();
+    if (selection) {
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+      selection.removeAllRanges();
+      toast.success('¡Contacto copiado al portapapeles!');
+    }
   };
 
   return (
@@ -58,19 +67,19 @@ const Castings: React.FC = (): JSX.Element => {
               <p>{selectedCasting.description}</p>
               <p className='casting-modal-content__required-info-title'><b>Para aplicar, tenés que enviar:</b></p>
               <p><span className="casting-modal-content__required-info">{selectedCasting.requiredInfo}</span></p>
-              <p className='casting-modal-content__required-info-title'><b>Contacto:</b></p>
+              <p className='casting-modal-content__required-info-title'><b>A este contacto:</b></p>
               {selectedCasting.contact.email && (
-                <p className='casting-modal-content__copy-contact' onClick={() => copyToClipboard(selectedCasting.contact.email)}>
+                <p className='casting-modal-content__copy-contact' onClick={copyToClipboard}>
                   {selectedCasting.contact.email}
                 </p>
               )}
               {selectedCasting.contact.phone && (
-                <p className='casting-modal-content__copy-contact' onClick={() => copyToClipboard(selectedCasting.contact.phone)}>
+                <p className='casting-modal-content__copy-contact' onClick={copyToClipboard}>
                   {selectedCasting.contact.phone}
                 </p>
               )}
             </AccentBlock>
-            <p>Elegí un medio para continuar:</p>
+            <p>O podés elegir un medio para continuar:</p>
             <div className="casting-modal-content__buttons">
               {selectedCasting.contact.email && (
                 <Button
